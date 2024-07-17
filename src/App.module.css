@@ -1,0 +1,33 @@
+@import "./vars.css";
+
+.App{
+    background-color: var(--color-background);
+    width: 100%;
+    height: 100%;
+    /* background-image: url('/assets/ArtDecoPattern-B84HvN3P.png'); */
+
+    background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png');
+    background-repeat: repeat;
+    background-size: cover;
+    background-size: 15%;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

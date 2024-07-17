@@ -1,0 +1,91 @@
+@import "../../vars.css";
+
+.container{
+    display: flex;
+    flex-direction: row;
+    min-height: 960px;
+    height: auto;
+    width: 100%;
+}
+
+
+.sidebar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 16px;
+    width: 256px;
+    border-right: 5px solid var(--color-primary);
+    flex-shrink: 0;
+
+}
+.sidebar h3{
+    color: var(--color-on-background);
+}
+.sidebarcontent{
+    display: flex;
+    flex-direction: column;
+}
+.skillscontainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 16px;
+    width: 256px;
+    flex-shrink: 0;
+    
+}
+.skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+
+}
+
+.skillImageContainer{
+    background-color: var(--color-surface);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+    border: 2px solid var(--color-primary);
+
+}
+
+.skillImageContainer img{
+    width: 60%;
+    height: 60%;
+}
+
+
+.content{
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title{
+    align-self: flex-end;
+    margin-right: 32px;
+
+}
+
+
+@media screen and (max-width: 830px) {
+    .container{
+        flex-direction: column;
+
+    }
+    .content{
+        align-items: center;
+    }
+
+    
+}
+

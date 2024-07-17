@@ -1,0 +1,110 @@
+[
+    {
+      "title": "Steam Stonks",
+      "id": "steamstonks",
+      "focused": false,
+      "imageSrc": "images/projects/steamstonks_card.png",
+      "description": "Produce steam and sell it for money. Compete on online leaderboards in this hectic first-person steam-farming game!",
+      "collaborators": ["Sune Hvidt","Jonas Lauridsen","Mille Hafnar Johnsen"],
+      "projecttype": "Gamejam",
+      "role": "Programmer",
+      "duration": "3 Days",
+      "tools": ["Unity","Blender"],
+      "tags": ["Unity", "VFX"],
+      "demo": "https://www.example.com",
+      "source": "https://www.github.com",
+      "maindisplay": "https://www.youtube.com/embed/5lAYtsr6KKY?autoplay=1&loop=1&mute=1&modestbranding=1&iv_load_policy=3&controls=0&disablekb=1&fs=0&color=white",
+      "links":[{
+        "linktype": "Demo",
+        "link": "https://laurjam.itch.io/steam-stonks"
+      }],
+      "gallery":[{
+        "imagetitle": "Title test",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": "Lorem Ipsum dorem dol dalet"
+      },
+      {
+        "imagetitle": "",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": "Lorem Ipsum dorem dol dalet"
+      },
+      {
+        "imagetitle": "Title test",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": ""
+      },
+      {
+        "imagetitle": "",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": ""
+      }
+      ]
+    },
+    {
+      "title": "Portfolio Page",
+      "id": "steamstonks",
+      "focused": true,
+      "imageSrc": "images/projects/steamstonks_card.png",
+      "description": "Produce steam and sell it for money. Compete on online leaderboards in this hectic first-person steam-farming game!",
+      "collaborators": ["Sune Hvidt","Jonas Lauridsen","Mille Hafnar Johnsen"],
+      "projecttype": "Gamejam",
+      "role": "Programmer",
+      "duration": "3 Days",
+      "tools": ["Unity","Blender"],
+      "tags": ["React", "CSS","HTML","Front End","Unity"],
+      "demo": "https://www.example.com",
+      "source": "https://www.github.com",
+      "maindisplay": "https://www.youtube.com/embed/5lAYtsr6KKY?autoplay=1&loop=1&mute=1&modestbranding=1&iv_load_policy=3&controls=0&disablekb=1&fs=0&color=white",
+      "links":[{
+        "linktype": "Demo",
+        "link": "https://laurjam.itch.io/steam-stonks"
+      }],
+      "gallery":[{
+        "imagetitle": "Title test",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": "Lorem Ipsum dorem dol dalet"
+      },
+      {
+        "imagetitle": "",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": "Lorem Ipsum dorem dol dalet"
+      },
+      {
+        "imagetitle": "Title test",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": ""
+      },
+      {
+        "imagetitle": "",
+        "imageSrc": "placeholder/image/image-xl.png",
+        "imageText": ""
+      }
+      ]
+    }, 
+    {
+      "title": "",
+      "id": "",
+      "focused": true,
+      "imageSrc": "images/projects/",
+      "description": "",
+      "collaborators": [],
+      "projecttype": "",
+      "role": "",
+      "duration": "",
+      "tools": [],
+      "tags": [],
+      "demo": "",
+      "source": "",
+      "maindisplay": "",
+      "links":[{
+        "linktype": "",
+        "link": ""
+      }],
+      "gallery":[{
+        "imagetitle": " ",
+        "imageSrc": "",
+        "imageText": ""
+      }
+      ]
+    }
+  ]

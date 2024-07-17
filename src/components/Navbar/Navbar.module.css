@@ -1,0 +1,147 @@
+@import "../../vars.css";
+
+.navbar{
+
+    z-index: 999;
+    display: flex;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    
+}
+
+
+
+.menuItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    list-style: none;
+    gap: 16px;
+
+}
+
+.menuItems a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+#itemtext{
+    color: var(--color-bodytext);
+    border-bottom-left-radius: 5px;
+    padding:2px 16px 2px 2px;
+    border-top-left-radius: 5px;
+    border: 2px solid var(--color-bodytext);
+    background-color: var(--color-background);
+    transform: translate(14px);
+
+}
+.shown{
+    display: block;
+    overflow: hidden;
+    animation-name: showtext;
+    animation-duration: 1s;
+    width: auto;
+
+}
+
+.hidden{
+    overflow: hidden;
+    display: none;
+    
+}
+
+.menuItems li:hover
+.hidden{
+    display: block;
+    overflow: hidden;
+    width: auto;
+    animation-name: showtext;
+    animation-duration: 1s;
+    
+}
+
+@keyframes showtext {
+    from {max-width: 0;}
+    to {max-width: 256px;}
+}
+
+
+
+a:visited{
+    color: var(--color-bodytext);
+}
+a:link {
+    text-decoration: none;
+}
+
+
+
+#square {
+    justify-self: center;
+    border-style: solid;
+    border-width: medium;
+    border-color: white;
+    background-color: var(--color-background);
+    margin: 8px;
+}
+
+.selected{
+    height: 24px;
+    width: 24px;
+    transform: rotate(45deg);
+    transition: all 0.2s linear;
+    
+}
+
+.unselected{
+    transform: rotate(0) translate(-4px);
+    height: 16px;
+    width: 16px;
+    margin: 4px;
+    transition: all 0.2s linear;
+}
+
+@media screen and (max-width: 830px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu{
+        position: absolute;
+        right: 0;
+        margin-right: 10%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+
+    .menuBtn{
+        display: block;
+        cursor: pointer;
+    }
+
+    .menuItems{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        border-radius: 10px;
+        background:rgb(25, 55, 109);
+        background: linear-gradient(180deg,var(--color-gradientstart)0%,var(--color-gradientend)100%);
+
+        padding: 24px 33px;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
+    }
+
+
+
+    .menuOpen{
+        display: flex;
+        z-index: 1;
+    }
+}

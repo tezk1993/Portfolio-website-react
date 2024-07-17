@@ -1,0 +1,96 @@
+@import "../../../vars.css";
+
+.wrapper{
+
+}
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+/* Item */
+
+#item{
+    background: var(--color-dark);
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+
+}
+
+.itemcollapsed{
+    width: 500px;
+
+    transition: width 0.5s cubic-bezier(0,1,0,1);
+
+}
+
+
+.itemopened{
+    width: 500px;
+    margin: 18px;
+    transition: width 0.5s cubic-bezier(0,1,0,1);
+
+}
+
+
+.title{
+    color: var(--color-bodytext);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+.title img[src=""]{
+    display: none;
+}
+
+
+.organisation{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.dates{
+    color: var(--color-secondary);
+}
+.caret{
+    color: var(--color-primary);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#tab{
+    overflow: hidden;
+    background-color: var(--color-bg);
+    border-radius: 10px;
+    
+}
+
+#tab ul{
+    padding: 5px;
+    list-style: none;
+    gap: ;
+}
+
+#tab li{
+    margin-bottom: 16px;
+}
+
+/* Description */
+.collapsed{
+    max-height: 0;
+    height: auto;
+    transition: all 0.5s cubic-bezier(0,1,0,1);
+}
+
+.opened{
+    height: 500px;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(1,0,1,0);
+    
+}

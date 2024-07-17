@@ -1,0 +1,71 @@
+@import "../../vars.css";
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: row;
+    width: 256px;
+    border-right: 5px solid var(--color-primary);
+}
+
+.divider{
+    border: 3px solid var(--color-primary);
+    margin: 16px;
+}
+
+.title{
+    font-size: 6rem;
+    text-transform:uppercase;
+    margin-right: 32px;
+}
+
+.content{
+    background-color: var(--color-primary);
+    height: 100%;
+ 
+}
+.aboutwrapper{
+    display: flex;
+    flex-direction: row;
+    margin-left: 256px;
+    margin-right: 256px;
+    justify-content: space-between;
+
+}
+
+.aboutimage img{
+    max-height: 806px;
+    margin-right: 64px;
+    
+}
+
+.abouttext{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 64px 0 0 64px;
+}
+
+.abouttext h3{
+    max-width: 357px;
+}
+
+.abouttext p{
+    max-width: 606px;
+
+}
+
+@media screen and (max-width: 830px) {
+
+}
+

@@ -1,0 +1,56 @@
+@import "../../../../vars.css";
+
+.wrapper{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion{
+    width: 500px;
+}
+
+.item{
+    background: #f8ebe1;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+}
+.hiddenitem{
+    display: none;
+    
+}
+
+
+.title{
+    color: #85662b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.title h2{
+    color: black;
+}
+.title span{
+    color: black;
+}
+
+#tab{
+    overflow: hidden;
+}
+
+.collapsed{
+    max-height: 0;
+    height: auto;
+    transition: max-height 0.5s cubic-bezier(0,1,0,1);
+}
+
+.opened{
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(1,0,1,0);
+}

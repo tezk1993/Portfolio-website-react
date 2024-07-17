@@ -1,0 +1,113 @@
+@import "../../vars.css";
+
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 256px ;
+    background: linear-gradient(180deg, var(--color-background) 25%, rgba(0,212,255,0) 100%);
+    border-right: 5px solid var(--color-primary);
+    flex-shrink: 0;
+}
+
+.logo{
+   
+    margin-top: 64px;
+    width: 128px;
+    height: 128px;
+    
+}
+
+.content{
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+  
+.content p{
+    align-self: center;
+    margin-top: 100px;
+    color: var(--color-bodytext);
+
+    font-size: var(--size-largebodytext);
+    font-weight: var(--weight-heavybold);
+}
+.name {
+    margin: 128px;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    
+}
+#firstname {
+    align-self: flex-start;
+    margin-left: 156px;
+}
+#middlename {
+    align-self: center;
+
+}
+#lastname{
+    align-self: flex-end;
+
+}
+
+.contactBtn{
+
+
+}
+
+
+.links{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    height: 128px;
+
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.link a{
+    font-size: 2em;
+    color: var(--color-primary);
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 830px) {
+    .container{
+        flex-direction: column;
+
+    }
+    .content{
+        align-items: center;
+    }
+
+    
+}
