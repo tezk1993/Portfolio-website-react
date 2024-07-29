@@ -5,7 +5,9 @@ import { getImageUrl } from "../../utils";
 
 export const Navbar = ({toggle,selected}) => {
 
-      
+    const [hoverselection, setHoverSelection] = useState(null)
+
+
   return (
     
     <nav className={styles.navbar}>
@@ -14,7 +16,7 @@ export const Navbar = ({toggle,selected}) => {
             <ul className={styles.menuItems}> 
                 <li>
 
-                    <a href='#hero' onClick={() => toggle(0)} >
+                    <a href='#hero' onClick={() => toggle(0)}  >
                         <h4 id={styles.itemtext}  className={selected === 0 ? styles.shown : styles.hidden}>Hero</h4>
                         <div id={styles.square} className={selected === 0 ? styles.selected : styles.unselected}></div>
                     </a>
@@ -33,7 +35,7 @@ export const Navbar = ({toggle,selected}) => {
                 </li>
                 <li>
                     <a href='#projects' onClick={() => toggle(3)} >
-                        <h4 id={styles.itemtext}  className={selected === 0 ? styles.shown : styles.hidden}>Projects</h4>
+                        <h4 id={styles.itemtext}  className={selected === 0? styles.shown : styles.hidden}>Projects</h4>
                         <div id={styles.square} className={selected === 3 ? styles.selected : styles.unselected}></div>
                     </a>
                 </li>

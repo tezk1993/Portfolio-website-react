@@ -7,25 +7,54 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
 import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
-
-
-import { useState, useCallback, useId } from 'react';
+import { useState, useCallback, useId , useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import supabase from '../SupabaseClient';
+import { HiThere } from '../Animations/HiThere';
+import { motion } from "framer-motion";
+
+
 
 
 
 export const Projects = ({newref}) => {
-  const alltags = [...new Set(projects.map(item => item.tags))]; // [ 'A', 'B']
 
 
+  const [databaseprojects, setDatabaseProjects] = useState([]);
   const [selectedtags, setSelectedTags] = useState([]);
-  const [availabletags, setAvailableTags] = useState([...new Set(alltags.flat(1))]);
+  const [availabletags, setAvailableTags] = useState([]);
+
+  const [tagbarstate, setTagBarState] = useState(false);
+
+  // const variants = {
+  //   default: {
+     
+  //   },
+  //   hover:{
+  //     scale: [1.4, 1.4, 1.4, 1.4, 1],
+  //     rotate: [0, -20, 20, 0, 0],
   
+  //   }
+  // };
+  useEffect(() => {
+      getProjects();
+    }, []);
+
+  async function getProjects() {
+    const { data } = await supabase().from("Projects").select();
+    setAvailableTags([...new Set(data.map(item => item.tags).flat(1))])
+    data.sort(function(a,b){
+      return new Date(b.dateofproject) - new Date(a.dateofproject);
+    });
+    setDatabaseProjects(data);
+  }
+
+
   const id = useId();
 
-  console.log(availabletags)
   const addTag = useCallback(
     (tagId) => () => {
+      console.log(tagId);
       const tagsFiltered = availabletags.filter((tag) => {
          return tag !== tagId;
       });
@@ -58,12 +87,32 @@ export const Projects = ({newref}) => {
     return target.every((tag) => current.includes(tag));
   };
 
+  function openTagbar() {
+    console.log("opentagbar");
+    if(!tagbarstate){
+      document.getElementById("tagcontainer").style.width = "0px";
+      document.getElementById("tagcontainer").style.padding = "0px";
+
+      document.getElementById("caret").className = "fas fa-caret-right";
+
+      
+    }else{
+      document.getElementById("tagcontainer").style.width = "288px";
+      document.getElementById("tagcontainer").style.padding = "16px";
+
+      document.getElementById("caret").className = "fas fa-caret-left";
+
+    }
+    setTagBarState(!tagbarstate);
+
+  }
+  
 
 
   return (
     <section  className={styles.container} id="projects">
       <div className={styles.header}>
-        <div className={styles.sidebar}></div>
+   
         <h2 ref={newref} className={styles.title}>Projects</h2>
       </div>        
 
@@ -72,44 +121,47 @@ export const Projects = ({newref}) => {
 
         <div className={styles.contentsidebar}>
 
-          <div  className={styles.tagholder}>
-          <div className={styles.selectedtags}>
+          <div   className={styles.tagtab}>
+            <i id='caret' className= "fas fa-caret-left" onClick={openTagbar}/>
+            <div id="tagcontainer" className={styles.tagcontainer}>
             <h5> Selected tags</h5>
+              <div className={styles.tags}>
+        
 
-            {selectedtags.length > 0
-                ? selectedtags.map((tag) => {
+              {selectedtags.length > 0
+                  ? selectedtags.map((tag) => {
+                      return (
+                        <button
+                          key={`selected-close-button-${tag}`}
+                          className={styles.tag}
+                          onClick={deleteTag(tag)}
+                          // onClick={deleteTag(tag)}
+
+                        >
+                          {tag}
+                        </button>
+                      );
+                    })
+                  : <p>No tags selected</p>}
+            </div>
+            <h5> Available tags</h5>
+            <div className={styles.tags} >
+                {availabletags.length > 0
+                ? availabletags.map((tag) => {
                     return (
                       <button
-                        key={`selected-close-button-${tag}`}
+                        key={`available-close-button-${tag}`}
                         className={styles.tag}
-                        onClick={deleteTag(tag)}
-                        // onClick={deleteTag(tag)}
-
-                      >
-                        {tag} &nbsp; x
+                        // onClick={() => {addTag(tag); deleteAvailableTag(tag);}}
+                        // onClick={addTag(tag)}
+                        onClick={addTag(tag)}
+                        >
+                        {tag}
                       </button>
                     );
                   })
-                : 'No tags selected'}
-          </div>
-           
-          <div className={styles.availabletags} >
-            <h5> Available tags</h5>
-              {availabletags.length > 0
-              ? availabletags.map((tag) => {
-                  return (
-                    <button
-                      key={`available-close-button-${tag}`}
-                      className={styles.tag}
-                      // onClick={() => {addTag(tag); deleteAvailableTag(tag);}}
-                      // onClick={addTag(tag)}
-                      onClick={addTag(tag)}
-                      >
-                      {tag} &nbsp; x
-                    </button>
-                  );
-                })
-              : 'No tags available'}
+                : <p>No tags available</p>}
+              </div>
             </div>
           </div>
 
@@ -118,46 +170,12 @@ export const Projects = ({newref}) => {
 
 
         <div className={styles.cardcontainer}>
-            {projects
+            {databaseprojects
             .filter((proj) =>  matchTags(proj.tags, selectedtags))
-            .map(({ title, id, description, tags,focused,imageSrc,collaborators,duration,tools,role}) => {
-              
-              return (
-                <div id={styles.card} key={`card-${id}`} className={`${styles.card} ${focused=== true ? styles.focusedcard : styles.card}` } style={ title === null || title==="" ? { display:'none'} : {display : 'block'} }>
-                  <div className={styles.imgcontainer}  >
-                    <img src={getImageUrl(imageSrc)} alt='project image'/>
-                    <div className={styles.cardimgcaption}>
-                      <FontAwesomeIcon icon={faPeopleGroup} style={ collaborators === null ? { display:'none'} : {display : 'block'} }   /> {collaborators.length} 
-                      <FontAwesomeIcon icon={faClock} style={ duration === null ? { display:'none'} : {display : 'block'} }   /> {duration}
-                      <FontAwesomeIcon icon={faScrewdriverWrench}   style={ tools === null ? { display:'none'} : {display : 'block'} }  
-                      />  {tools[0]}
-                    
-                    </div>
-                  </div>
-                  <div className={styles.textcontainer}>
-                    <div className={styles.titlecontainer}>
-                    <h3>{title}</h3>
-                    <Link key={title} to={`/projects/${id}`} ><i className= "fas fa-caret-right" onClick={() => {window.scroll(0,0)}}/> </Link>
-                    </div>
-                    <h4>{role}</h4>
-
-                    <p>{description}</p>
-                  </div>
-                  <div className={styles.cardtags}>
-                    {tags.map((tag) => {
-                      return (
-                        <button
-                          key={`card-add-button-${tag}`}
-                          type='button'
-                          onClick={addTag(tag)}
-                        >
-                          #{tag}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
+            .map((x) => {
+              return(
+                <ProjectCard project={x}/>
+              )
             })}
         </div>
 

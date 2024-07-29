@@ -7,8 +7,34 @@
    viewBox="0 0 67.733329 67.733334"
    version="1.1"
    id="svg5"
+   sodipodi:docname="Logo_Finished_Light.svg"
+   inkscape:export-filename="Logo_Finished_Light.webp"
+   inkscape:export-xdpi="48.000004"
+   inkscape:export-ydpi="48.000004"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview36"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.7676601"
+     inkscape:cx="13.368693"
+     inkscape:cy="155.3659"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
   <defs
      id="defs2">
     <linearGradient
@@ -137,7 +163,7 @@
        y="0"><tspan
          x="87.583954"
          y="145.834"
-         id="tspan27467">D</tspan></text>
+         id="tspan854">D</tspan></text>
     <g
        id="g16255"
        style="display:none">
@@ -187,6 +213,6 @@
        y="0"><tspan
          x="87.583954"
          y="145.834"
-         id="tspan27469">D</tspan></text>
+         id="tspan856">D</tspan></text>
   </g>
 </svg>

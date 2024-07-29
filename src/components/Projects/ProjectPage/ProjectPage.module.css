@@ -5,12 +5,14 @@
 .container{
     width: 100%;
     background-color: var(--color-lightdark);
-    padding: 0px 16px 16px 16px;
+    padding: 0px 1rem 1rem 1rem;
     min-height: 100%;
-    background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png');
+    background-image: url('/assets/ArtDecoPattern-B84HvN3P.png');
+
+    /* background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png'); */
     background-repeat: repeat;
     background-size: cover;
-    background-size: 15%;
+    background-size: 30%;
     display: block;
     overflow: auto;    
 }
@@ -22,14 +24,10 @@
     flex-direction: column;
 }
 
-
-
-
-
 .exit{
     
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,15 +45,18 @@
 }
 .content_maindisplay{
     background-color: var(--color-lightdark);
-
-    height: 916px;
+    position: relative;
+    overflow: hidden;
     width: 100%;
-
-
-
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
 .content_maindisplay iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
 }
@@ -67,26 +68,20 @@
     margin-top: 32px;
 
 }
-.content_lower_left{
-    width: 33%;
-}
 
 .content_lower_right{
     width: 100%;
 
 }
-.content_title_container{
-
-}
 
 .content_title_container h2{
-    font-size: 4em;
+    font-size: 4rem;
 
 }
 .content_title_container h3{
     color: var(--color-textaccent);
 
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .content_details_container{
@@ -97,22 +92,23 @@
 .content_details_container hr{
     border: 3px solid var(--color-primary);
 
-    margin: 24px 24px 24px 0px;
+    margin: 1.5rem 1.5rem 1.5rem 0px;
 
 }
 
-.content_details_overview{
+
+
+.content_details_overview ul {
     display: flex;
     flex-direction: row;
-    margin-right: 128px;
+    align-items: flex-start;
+    list-style-type: none;
     justify-content: space-between;
-
-}
-.content_details_element{
-    display: flex;
-    flex-direction: column;
-
-}
+    margin: 0;
+    padding-right: 4rem;
+    gap: 8px;
+  }
+  
 
 .content_details_element h2{
     color: var(--color-bodytext);
@@ -128,11 +124,47 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 2rem;
 }
 
 .content_gallery img{
     width: 100%;
     width: 100%;
     
+}
+
+
+@media screen and (max-width: 830px) {
+    .content_maindisplay{
+    
+    }
+
+    .content_lower{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        margin-top: 2rem;
+    
+    }
+    .container{
+        width: 100%;
+        background-color: var(--color-lightdark);
+        padding: 0px 1rem 1rem 1rem;
+        min-height: 100%;
+        background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png');
+        background-repeat: repeat;
+        background-size: cover;
+        background-size: 100%;
+        display: block;
+        overflow: auto;    
+    }
+    .content_details_overview ul{
+        flex-direction: column;
+        flex-wrap: wrap;
+    
+        gap: 2rem;
+    }
+ 
 }

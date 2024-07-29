@@ -3,7 +3,6 @@
 .container{
     display: flex;
     flex-direction: row;
-    height: 100vh;
     width: 100%;
 }
 .sidebar{
@@ -77,7 +76,8 @@
     margin-top: 32px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 24px;
     height: 128px;
 
@@ -94,7 +94,12 @@
     color: var(--color-primary);
 }
 
-
+.link p{
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-weight: var(--weight-heavybold);
+    margin: 4px;
+}
 
 
 
@@ -109,5 +114,40 @@
         align-items: center;
     }
 
+    .sidebar{
+        border: 0px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background:none;
+
+    }
+    .links{
+        margin-top: 32px;
+        display: flex;
+        flex-direction: row;
+        height: 128px;
     
+    }
+    .name h1{
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #firstname {
+        align-self: center;
+        margin-left: 0px;
+    }
+    #middlename {
+        align-self: center;
+    
+    }
+    #lastname{
+        align-self: center;
+    
+    }
+    .content p{
+        display: none;
+    }
 }

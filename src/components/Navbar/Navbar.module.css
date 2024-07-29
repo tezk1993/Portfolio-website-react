@@ -7,7 +7,7 @@
     position: fixed;
     right: 32px;
     bottom: 32px;
-    
+
 }
 
 
@@ -19,64 +19,84 @@
     align-items: flex-end;
     list-style: none;
     gap: 16px;
-
 }
 
 .menuItems a{
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+ 
 }
 
 #itemtext{
     color: var(--color-bodytext);
-    border-bottom-left-radius: 5px;
-    padding:2px 16px 2px 2px;
-    border-top-left-radius: 5px;
-    border: 2px solid var(--color-bodytext);
     background-color: var(--color-background);
+
     transform: translate(14px);
 
-}
-.shown{
-    display: block;
     overflow: hidden;
-    animation-name: showtext;
-    animation-duration: 1s;
-    width: auto;
 
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+
+.shown{
+    /* animation-name: showtext;
+    animation-duration: 5s; 
+    animation-fill-mode: forwards; */
+    max-width: 256px;
+    padding:2px 16px 2px 2px;
+    border: 2px solid var(--color-bodytext);
+    transition: all 1s cubic-bezier(0,1,0,1);
+    opacity: 100%;
 }
 
 .hidden{
-    overflow: hidden;
-    display: none;
-    
+    max-width: 0;
+    padding:0px;
+    border: 0px solid var(--color-bodytext);
+    transition: all 1s cubic-bezier(0,1,0,1);
+    opacity: 0%;
+
+    /* animation-name: showtext;
+    animation-duration: 5s; 
+    animation-fill-mode: forwards;
+    animation-direction: reverse; */
+
 }
 
 .menuItems li:hover
 .hidden{
-    display: block;
-    overflow: hidden;
-    width: auto;
-    animation-name: showtext;
-    animation-duration: 1s;
-    
+    max-width: 256px;
+    padding:2px 16px 2px 2px;
+    border: 2px solid var(--color-bodytext);
+    transition: all 1s ;
+    opacity: 100%;
 }
 
 @keyframes showtext {
-    from {max-width: 0;}
-    to {max-width: 256px;}
+    from {
+        max-width: 0;
+        padding:0px;
+        border: 0px solid var(--color-bodytext);
+        opacity: 0%;
+    }
+    to {
+        max-width: 256px;
+        padding:2px 16px 2px 2px;
+        border: 2px solid var(--color-bodytext);
+        opacity: 100%;
+
+    }
+    
 }
 
 
 
-a:visited{
-    color: var(--color-bodytext);
-}
-a:link {
-    text-decoration: none;
-}
+
 
 
 
@@ -94,7 +114,7 @@ a:link {
     width: 24px;
     transform: rotate(45deg);
     transition: all 0.2s linear;
-    
+
 }
 
 .unselected{
@@ -118,8 +138,12 @@ a:link {
         align-items: flex-end;
         gap: 11px;
         z-index: 3;
-    }
+        display: none;
 
+    }
+    .sidebar{
+    }
+    
     .menuBtn{
         display: block;
         cursor: pointer;

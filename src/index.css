@@ -80,7 +80,12 @@ h4{
 h5{
   color: var(--color-on-primary);
   font-size: var(--size-bodytext);
-  text-transform:uppercase;
+  font-weight: var(--weight-semibold);
+}
+
+h6{
+  color: var(--color-primary);
+  font-size: var(--size-bodytext);
   font-weight: var(--weight-semibold);
 }
 
@@ -119,10 +124,10 @@ pre {
  * Remove the gray background on active links in IE 10.
  */
 
-a {
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  text-decoration:none;
   background-color: transparent;
 }
-
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.

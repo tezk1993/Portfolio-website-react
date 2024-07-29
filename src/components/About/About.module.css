@@ -3,6 +3,8 @@
 .container{
     display: flex;
     flex-direction: column;
+    
+    width: 100%;
 }
 
 .header{
@@ -13,7 +15,9 @@
 
 .sidebar{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    
     width: 256px;
     border-right: 5px solid var(--color-primary);
 }
@@ -27,6 +31,7 @@
     font-size: 6rem;
     text-transform:uppercase;
     margin-right: 32px;
+    text-align: end;
 }
 
 .content{
@@ -45,6 +50,9 @@
 
 .aboutimage img{
     max-height: 806px;
+    max-width: 424px;
+    height: 50rem;
+    width: 25rem;
     margin-right: 64px;
     
 }
@@ -65,7 +73,48 @@
 
 }
 
-@media screen and (max-width: 830px) {
+.hidden{
+    opacity: 0;
+}
 
+.show{
+    opacity: 1;
+}
+
+@media screen and (max-width: 830px) {
+    .aboutwrapper{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-right: 0px;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .sidebar{
+        display: none;
+    }
+    .header{
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+    }
+    .title{
+        font-size: 3rem;
+        text-transform:uppercase;
+        margin-right: 0px;
+    }
+    .abouttext{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        margin: 16px 0 0 16px;
+    }
+    .aboutimage img{
+        width: 100%;
+        padding-right: 32px;
+        margin-right: 0px;
+    }
 }
 

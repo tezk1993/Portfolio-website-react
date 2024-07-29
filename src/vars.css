@@ -42,9 +42,9 @@
         --color-error: #B00020;
 
         --color-on-primary: #FFFFFF;
-        --color-on-secondary: #0000;
+        --color-on-secondary: #000000;
         --color-on-background: #F5CB5C;
-        --color-on-surface: #0000;
+        --color-on-surface: #000000;
         --color-on-error: #0000;
         
 
@@ -61,6 +61,7 @@
         --size-largetext: 6rem;
         --size-mediumtext: 5rem;
         --size-largebodytext: 2rem;
+        
         --size-bodytext: 1rem;
         /*Weight*/
         --weight-regular: 400;

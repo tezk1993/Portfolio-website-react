@@ -16,6 +16,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { Footer } from "./components/Footer/Footer";
 
+import { createClient } from "@supabase/supabase-js";
+
+
 
 library.add(fab, faCheckSquare, faCoffee)
 function App() {

@@ -42,7 +42,7 @@
     },
     {
       "title": "Portfolio Page",
-      "id": "steamstonks",
+      "id": "steamstonks2",
       "focused": true,
       "imageSrc": "images/projects/steamstonks_card.png",
       "description": "Produce steam and sell it for money. Compete on online leaderboards in this hectic first-person steam-farming game!",
@@ -93,8 +93,6 @@
       "duration": "",
       "tools": [],
       "tags": [],
-      "demo": "",
-      "source": "",
       "maindisplay": "",
       "links":[{
         "linktype": "",
@@ -104,7 +102,6 @@
         "imagetitle": " ",
         "imageSrc": "",
         "imageText": ""
-      }
-      ]
+      }]
     }
   ]
