@@ -35,7 +35,7 @@ export const Accordion = ({data}) => {
     <div className={styles.wrapper}>
             <div className={styles.accordion}>
                 {data.map((item, i) => (
-                    <Scale delay={0.25*i}>
+                    <Scale key={i + item.institute} delay={0.25*i}>
                         <motion.div   initial="default" whileHover="hover"  onHoverEnd={e => {}} id={styles.item} className={selected=== i ? styles.itemopened : styles.itemcollapsed}   key={i} onClick={() => toggle(i)}>
                             <div className={styles.title} >
                                 <div className={styles.organisation}> 
@@ -59,12 +59,12 @@ export const Accordion = ({data}) => {
                             </div>
                             <div id={styles.tab} className={selected=== i ? styles.opened : styles.collapsed}>
                                 <p>{item.description}</p>
-                                {item.responsibilities.map((bullets) =>(
-                                    <div>
+                                {item.responsibilities.map((bullets, bulletId) =>(
+                                    <div key={"bullet" + bulletId}>
                                         <h4>{bullets.bullettitle}</h4>
                                         <ul>
-                                            {bullets.bulletpoints.map((bulletpoint) => (
-                                                <li><h5>{bulletpoint}</h5></li>
+                                            {bullets.bulletpoints.map((bulletpoint,id) => (
+                                                <li key={id}><h5>{bulletpoint}</h5></li>
                                             ))}
                                         </ul>
                                     </div>

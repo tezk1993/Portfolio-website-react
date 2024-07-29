@@ -172,9 +172,9 @@ export const Projects = ({newref}) => {
         <div className={styles.cardcontainer}>
             {databaseprojects
             .filter((proj) =>  matchTags(proj.tags, selectedtags))
-            .map((x) => {
+            .map((x, id) => {
               return(
-                <ProjectCard project={x}/>
+                <ProjectCard key={id} project={x} />
               )
             })}
         </div>

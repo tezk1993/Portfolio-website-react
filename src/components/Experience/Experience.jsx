@@ -40,8 +40,6 @@ export const Experience = ({newref}) => {
       "Tools",
       "Languages" 
     ]
-    
-    console.log(SkillsOrder);
 
   return (
     <section className={styles.container} id="experience">
@@ -60,13 +58,13 @@ export const Experience = ({newref}) => {
           {
             SkillsOrder.map((category,id) => {
             return(
-              <div className={styles.sidebarcontent} >
+              <div key={id} className={styles.sidebarcontent} >
                 <h4>{category}</h4>
                   <div className={styles.skillscontainer}>
                     {skillsdatabase.filter((skill) => skill.category === category)
-                    .map((x) =>{
+                    .map((x,i) =>{
                       return(
-                        <div key={id} className={styles.skill}>
+                        <div key={i + x.name} className={styles.skill}>
                           <div>
                               <img src={getImageUrl(x.imgdir + x.iconname)} alt={`${x.name} Logo`}/> 
                           </div>

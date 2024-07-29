@@ -1,21 +1,21 @@
 @import "../../vars.css";
 
 .container{
-    margin-top: 24px;
+    margin-top: var(--spacing-small);
     color: var(--color-text);
     background-color: var(--color-secondary);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 100vw;
-    padding: 24px;
-    gap: 10px;
+    padding: var(--spacing-medium);
+    gap: var(--spacing-small);
 
 }
 .text {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--spacing-medium);
     align-items: start;
 
 }
@@ -38,7 +38,7 @@
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: var(--spacing-medium);
     height: 128px;
 
 }
@@ -46,7 +46,7 @@
 .link{
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: var(--spacing-medium);
 }
 
 .link a{
@@ -62,7 +62,7 @@
     .container{
         flex-direction: column;
         align-items: center;
-        gap: 34px;
+        gap: var(--spacing-medium);
     }
 
     .links{

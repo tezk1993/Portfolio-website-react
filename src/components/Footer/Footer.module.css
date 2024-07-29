@@ -4,12 +4,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 0.5rem;
+    margin-top: var(--spacing-xtrasmall);
 }
 
 .footer hr{
     border: 3px solid var(--color-primary);
-    margin: 1rem;
+    margin: var(--spacing-small);
     width: 98%;
 }
 .containers{
@@ -17,7 +17,7 @@
     align-items: flex-start;
     flex-direction: row;
     width: 100%;
-    padding: 1rem 5rem 1rem 1rem;
+    padding: var(--spacing-small) var(--spacing-xtralarge) var(--spacing-large) var(--spacing-small);
 }
 .containerleft{
     display: flex;
@@ -27,7 +27,7 @@
 }
 
 .logo{
-    margin: 1rem;
+    margin: var(--spacing-small);
     width: 4rem;
     height: 4rem;
     cursor: pointer;
@@ -39,22 +39,22 @@
     align-items: flex-start;
     justify-content: space-between;
 
-    gap: 1.5rem;
-    margin: 0.5rem;
+    gap: var(--spacing-medium);
+    margin: var(--spacing-xtrasmall);
 }
 .label{
     border: 2px var(--color-primary) solid;
     border-radius: 400px;
     
     min-width: fit-content;
-    padding: 4px;
+    padding: var(--spacing-xtrasmall);
 }
 .label h3{
     width: fit-content;
     height: fit-content;
 }
 .copyright{
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-small);
 }
 
 
@@ -70,27 +70,27 @@
 .contact{
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: var(--spacing-medium);
 }
 
 .links{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--spacing-small);
     list-style: none;
-    margin-right: 32px;
+    margin-right: var(--spacing-medium);
 }
 .emailcontact{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    word-spacing: 4px;
+    gap: var(--spacing-small);
+    word-spacing: var(--spacing-xtrasmall);
 
 }
 
 .footer a:hover{
     text-decoration: underline 2px dotted white;
-    text-underline-offset: 4px;
+    text-underline-offset: var(--spacing-xtrasmall);
 }
 
 @media screen and (max-width: 830px) {
@@ -100,8 +100,8 @@
 
         justify-content: space-between;
         align-items: center;
-        padding: 1rem;
-        gap:2rem;
+        padding: var(--spacing-xtrasmall);
+        gap:var(--spacing-small);
     }
     .version{
         display: flex;
@@ -111,6 +111,6 @@
 
     }
     .copyright{
-        margin: 1rem;
+        margin: var(--spacing-small);
     }
 }

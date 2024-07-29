@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: flex-end;
     list-style: none;
-    gap: 16px;
+    gap: var(--spacing-small);
 }
 
 .menuItems a{
@@ -48,7 +48,7 @@
     animation-duration: 5s; 
     animation-fill-mode: forwards; */
     max-width: 256px;
-    padding:2px 16px 2px 2px;
+    padding:var(--spacing-xxtrasmall) var(--spacing-small) var(--spacing-xxtrasmall) var(--spacing-xxtrasmall);
     border: 2px solid var(--color-bodytext);
     transition: all 1s cubic-bezier(0,1,0,1);
     opacity: 100%;
@@ -71,7 +71,7 @@
 .menuItems li:hover
 .hidden{
     max-width: 256px;
-    padding:2px 16px 2px 2px;
+    padding:var(--spacing-xxtrasmall) var(--spacing-small) var(--spacing-xxtrasmall) var(--spacing-xxtrasmall);
     border: 2px solid var(--color-bodytext);
     transition: all 1s ;
     opacity: 100%;
@@ -86,7 +86,7 @@
     }
     to {
         max-width: 256px;
-        padding:2px 16px 2px 2px;
+        padding: var(--spacing-xxtrasmall)  var(--spacing-small)  var(--spacing-xxtrasmall)  var(--spacing-xxtrasmall);
         border: 2px solid var(--color-bodytext);
         opacity: 100%;
 
@@ -106,7 +106,7 @@
     border-width: medium;
     border-color: white;
     background-color: var(--color-background);
-    margin: 8px;
+    margin: var(--spacing-xtrasmall);
 }
 
 .selected{
@@ -121,7 +121,7 @@
     transform: rotate(0) translate(-4px);
     height: 16px;
     width: 16px;
-    margin: 4px;
+    margin: var(--spacing-xtrasmall);
     transition: all 0.2s linear;
 }
 
@@ -136,7 +136,7 @@
         margin-right: 10%;
         flex-direction: column;
         align-items: flex-end;
-        gap: 11px;
+        gap: var(--spacing-small);
         z-index: 3;
         display: none;
 
@@ -153,12 +153,12 @@
         display: none;
         flex-direction: column;
         align-items: center;
-        gap: 13px;
+        gap: var(--spacing-small);
         border-radius: 10px;
         background:rgb(25, 55, 109);
         background: linear-gradient(180deg,var(--color-gradientstart)0%,var(--color-gradientend)100%);
 
-        padding: 24px 33px;
+        padding: var(--spacing-small) var(--spacing-medium);
         box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
     }
 

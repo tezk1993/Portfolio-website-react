@@ -69,5 +69,15 @@
         --weight-bold: 700;
         --weight-heavybold: 1000;
 
+
+    /*Spacing*/
+        --spacing-xxtralarge: 8rem;
+        --spacing-xtralarge: 6rem;
+        --spacing-large: 4rem;
+        --spacing-medium: 2rem;
+        --spacing-small: 1rem;
+        --spacing-xtrasmall: 0.5rem;
+        --spacing-xxtrasmall: 0.25rem;
+
 }
 

@@ -14,8 +14,8 @@
 
 .item{
     background: #f8ebe1;
-    margin-bottom: 5px;
-    padding: 10px 20px;
+    margin-bottom: var(--spacing-xtrasmall);
+    padding: var(--spacing-xtrasmall) var(--spacing-small);
 }
 .hiddenitem{
     display: none;

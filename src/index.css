@@ -39,6 +39,8 @@ main {
   display: block;
 }
 
+
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -47,7 +49,7 @@ main {
 h1 {
   font-size: var(--size-mediumtext);
   font-weight: var(--weight-heavybold);
-  margin: 0.67em 0;
+  margin: var(--spacing-xtrasmall)  0;
   font-family: var(--font-primary);
   color: var(--color-pagetitle);
 

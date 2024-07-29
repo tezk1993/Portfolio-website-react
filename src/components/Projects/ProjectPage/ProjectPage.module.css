@@ -5,7 +5,7 @@
 .container{
     width: 100%;
     background-color: var(--color-lightdark);
-    padding: 0px 1rem 1rem 1rem;
+    padding: 0px var(--spacing-small) var(--spacing-small) var(--spacing-small);
     min-height: 100%;
     background-image: url('/assets/ArtDecoPattern-B84HvN3P.png');
 
@@ -65,7 +65,7 @@
     flex-direction: row;
     height: auto;
     width: 100%;
-    margin-top: 32px;
+    margin-top: var(--spacing-medium);
 
 }
 
@@ -92,7 +92,7 @@
 .content_details_container hr{
     border: 3px solid var(--color-primary);
 
-    margin: 1.5rem 1.5rem 1.5rem 0px;
+    margin: var(--spacing-medium) var(--spacing-medium)  var(--spacing-medium)  0px;
 
 }
 
@@ -105,8 +105,8 @@
     list-style-type: none;
     justify-content: space-between;
     margin: 0;
-    padding-right: 4rem;
-    gap: 8px;
+    padding-right: var(--spacing-large) ;
+    gap: var(--spacing-xtrasmall);
   }
   
 
@@ -123,8 +123,8 @@
 .content_gallery{
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 2rem;
+    gap: var(--spacing-small);
+    margin-top: var(--spacing-medium);
 }
 
 .content_gallery img{
@@ -145,13 +145,13 @@
         align-items: center;
         height: auto;
         width: 100%;
-        margin-top: 2rem;
+        margin-top: var(--spacing-medium);
     
     }
     .container{
         width: 100%;
         background-color: var(--color-lightdark);
-        padding: 0px 1rem 1rem 1rem;
+        padding: 0px var(--spacing-small) var(--spacing-small) var(--spacing-small);
         min-height: 100%;
         background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png');
         background-repeat: repeat;
@@ -164,7 +164,7 @@
         flex-direction: column;
         flex-wrap: wrap;
     
-        gap: 2rem;
+        gap: var(--spacing-medium);
     }
  
 }

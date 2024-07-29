@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: min(100vh,960px);
+
 }
 .sidebar{
     display: flex;
@@ -17,7 +19,7 @@
 
 .logo{
    
-    margin-top: 64px;
+    margin-top: var(--spacing-large);
     width: 128px;
     height: 128px;
     
@@ -34,14 +36,14 @@
   
 .content p{
     align-self: center;
-    margin-top: 100px;
+    margin-top: var(--spacing-xtralarge);
     color: var(--color-bodytext);
 
     font-size: var(--size-largebodytext);
     font-weight: var(--weight-heavybold);
 }
 .name {
-    margin: 128px;
+    margin: var(--spacing-xxtralarge);
     height: 325px;
     display: flex;
     flex-direction: column;
@@ -50,12 +52,12 @@
 
 .title {
     text-transform: uppercase;
-    letter-spacing: 15px;
+    letter-spacing: var(--spacing-small);
     
 }
 #firstname {
     align-self: flex-start;
-    margin-left: 156px;
+    margin-left: var(--spacing-xtralarge);
 }
 #middlename {
     align-self: center;
@@ -73,12 +75,12 @@
 
 
 .links{
-    margin-top: 32px;
+    margin-top: var(--spacing-medium);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: var(--spacing-medium);
     height: 128px;
 
 }
@@ -86,7 +88,7 @@
 .link{
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: var(--spacing-medium);
 }
 
 .link a{
@@ -98,7 +100,7 @@
     color: var(--color-primary);
     text-transform: uppercase;
     font-weight: var(--weight-heavybold);
-    margin: 4px;
+    margin: var(--spacing-xtrasmall);
 }
 
 
@@ -123,7 +125,7 @@
 
     }
     .links{
-        margin-top: 32px;
+        margin-top: var(--spacing-medium);
         display: flex;
         flex-direction: row;
         height: 128px;

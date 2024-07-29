@@ -3,7 +3,7 @@
 .container{
     width: 100%;
     background-color: var(--color-lightdark);
-    padding: 0px 16px 16px 16px;
+    padding: 0px var(--spacing-small) var(--spacing-small) var(--spacing-small);
     min-height: 100%;
     height: 100vh;
     background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png');
@@ -21,7 +21,7 @@
 .title{
     font-size: 10rem;
     text-transform:uppercase;
-    margin: 128px;
+    margin: var(--spacing-xxtralarge);
 
 }
 
@@ -37,7 +37,7 @@
 }
 
 span {
-	padding-top: 60px;
+	padding-top: var(--spacing-large);
 	text-align: center;
 	font-size: 150px;
     color: var(--color-error);

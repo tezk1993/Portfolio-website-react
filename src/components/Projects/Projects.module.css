@@ -3,7 +3,8 @@
 .container{
     display: flex;
     flex-direction: column;
-    
+    height: max(100vh,auto);
+
     width: 100%;
 }
 
@@ -28,7 +29,7 @@
 
 .divider{
     border: 3px solid var(--color-primary);
-    margin: 16px;
+    margin: var(--spacing-medium);
 }
 
 
@@ -46,15 +47,15 @@
     flex-direction: row-reverse;
     align-items: center;
     position:sticky;
-    top: 32px;
-    margin-top: 32px;
+    top: var(--spacing-medium);
+    margin-top: var(--spacing-medium);
 }
 
 .tagtab i{
     font-size: 3rem;
     color: var(--color-dark);
     cursor: pointer;
-    margin-left: 8px;
+    margin-left: var(--spacing-xtrasmall);
 }
 
 .tagcontainer{
@@ -65,8 +66,8 @@
   display: flex;
   flex-direction: column;
   position:sticky;
-
-  gap: 16px;
+  
+  gap: var(--spacing-small);
   height: 500px;
   width: 288px;
 
@@ -79,8 +80,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
-    
+    gap: var(--spacing-xtrasmall);
+    margin-left: var(--spacing-small);
 }
 
 .tags p{
@@ -98,9 +99,9 @@ button {
   box-shadow: 2px 3px 3px #000000;
   color: var(--color-on-secondary);
   font-size: 20px;
-  padding: 5px;
+  padding: var(--spacing-xtrasmall);
   text-decoration: none;
-  margin: 16px;
+  margin: var(--spacing-medium);
 }
 
 
@@ -122,11 +123,11 @@ button:active {
 .card {
   display: flex;
   flex-direction: column;
-  padding: 1.125rem;
+  padding: var(--spacing-small);
   width: 300px;
   height: auto;
   background: var(--color-dark);
-  margin: 10px 0;
+  margin: var(--spacing-xtrasmall) 0;
   
   -webkit-box-shadow: 2px 3px 3px #000000;
   -moz-box-shadow: 2px 3px 3px #000000;
@@ -137,15 +138,15 @@ button:active {
 .focusedcard{
   display: flex;
   flex-direction: column;
-  padding: 1.125rem;
+  padding: var(--spacing-small);
   width: 450px;
   height: auto;
   background: var(--color-dark);
-  margin: 10px 0;
+  margin: var(--spacing-xtrasmall) 0;
 }
 
 .card:hover{
-  padding: 1rem;
+  padding: var(--spacing-small);
   border: var(--color-secondary) 0.125rem solid;
 }
 
@@ -177,11 +178,11 @@ button:active {
   position: absolute;
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: var(--spacing-xtrasmall);
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
-  padding: 4px;
+  padding: var(--spacing-xxtrasmall);
   width: 100%;
   font-size: 1em;
 }
@@ -191,7 +192,7 @@ button:active {
 
   display: flex;
   flex-direction: column;
-  margin: 8px 0 8px 0;
+  margin: var(--spacing-xtrasmall) 0 var(--spacing-xtrasmall) 0;
 }
 .textcontainer i{
   color: var(--color-primary);
@@ -201,23 +202,23 @@ button:active {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: var(--spacing-xtrasmall);
 
 }
 
   
 .close {
   border: none;
-  padding: 10px;
+  padding: var(--spacing-xtrasmall);
   background-color: #cfeed6;
-  margin: 0 10px;
+  margin: 0 var(--spacing-xtrasmall);
 
 }
 
 .tagfilter {
   position: relative;
   justify-content: center;
-  padding: 20px 10px;
+  padding: var(--spacing-small) var(--spacing-xtrasmall);
 }
 
 .cardcontainer {
@@ -225,8 +226,8 @@ button:active {
   flex-flow: row wrap;
   justify-content: center;
   align-content: flex-start;
-  gap: 16px;
-  margin: 20px 20px;
+  gap: var(--spacing-small);
+  margin: var(--spacing-small) var(--spacing-small);
 }
 
 
@@ -262,6 +263,6 @@ button:active {
     }
     .sidebar{
         border-right: 0px solid var(--color-primary);
-        margin: 32px;
+        margin: var(--spacing-medium);;
     }
 }
