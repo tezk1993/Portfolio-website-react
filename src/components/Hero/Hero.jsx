@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react'
+import React, {useState, useEffect } from 'react'
 import styles from "../Hero/Hero.module.css";
 import { getImageUrl } from '../../utils';
 import { getLoremIpsum } from '../../utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Typewriter } from '../Animations/Typewriter';
 
 
 export const Hero = ({newref}) => {
-    
-    useEffect(() =>{
-
-    })
 
   return (
     <section ref={newref} className={styles.container} id='hero'>
@@ -84,12 +81,14 @@ export const Hero = ({newref}) => {
         </div>
 
           <div className={styles.content}>
-            <div className={styles.name}>
-              <h1  className={styles.title} id={styles.firstname}>Dennis</h1>
+            <Typewriter className={styles.title} id={styles.firstname} text='Dennis'speed={100}/>
+            <Typewriter className={styles.title} id={styles.middlename} text='Schau' speed={100} delay={100}/>
+            <Typewriter className={styles.title} id={styles.lastname} text='Andersen'speed={100} delay={200}/>
+
+              {/* <h1  className={styles.title} id={styles.firstname}></h1>
               <h1  className={styles.title}  id={styles.middlename}>Schau</h1>
-              <h1  className={styles.title}  id={styles.lastname}>Andersen</h1>
-            </div>
-              <p className={styles.description}>SOFTWARE ENGINEER, FRONT END & APP DEVELOPER.</p>
+              <h1  className={styles.title}  id={styles.lastname}>Andersen</h1> */}
+              <h3 className={styles.description}>SOFTWARE ENGINEER, FRONT END & APP DEVELOPER.</h3>
           </div>
     </section>
   )

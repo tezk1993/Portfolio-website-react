@@ -47,22 +47,23 @@ main {
  */
 
 h1 {
-  font-size: var(--size-mediumtext);
-  font-weight: var(--weight-heavybold);
+  font-size: var(--size-largetext);
+  font-weight: var(--weight-bold);
   margin: var(--spacing-xtrasmall)  0;
-  font-family: var(--font-primary);
+  font-family: var(--font-title);
   color: var(--color-pagetitle);
-
+  letter-spacing: var(--spacing-small);
 
 }
 
 
 h2{
   color: var(--color-on-background);
-  font-size: var(--size-largetext);
+  font-size: var(--size-mediumtext);
   text-transform:uppercase;
   font-weight: var(--weight-bold);
-
+  font-family: var(--font-subtitle);
+  letter-spacing: var(--spacing-xtrasmall);
 }
 
 h3{
@@ -70,6 +71,9 @@ h3{
   font-size: var(--size-largebodytext);
   text-transform:uppercase;
   font-weight: var(--weight-semibold);
+  font-family: var(--font-subtitle);
+  letter-spacing: var(--spacing-xxtrasmall);
+
 }
 
 h4{
@@ -77,23 +81,31 @@ h4{
   font-size: var(--size-bodytext);
   text-transform:uppercase;
   font-weight: var(--weight-semibold);
+  font-family: var(--font-subtitle);
+
 }
 
 h5{
   color: var(--color-on-primary);
   font-size: var(--size-bodytext);
   font-weight: var(--weight-semibold);
+  font-family: var(--font-subtitle);
+
 }
 
 h6{
   color: var(--color-primary);
   font-size: var(--size-bodytext);
   font-weight: var(--weight-semibold);
+  font-family: var(--font-subtitle);
+
 }
 
 p{
   color: var(--color-on-primary);
   font-size: var(--size-bodytext);
+  font-family: var(--font-bodytext);
+
 }
 
 /* Grouping content

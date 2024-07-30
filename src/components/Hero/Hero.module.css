@@ -4,8 +4,52 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: min(100vh,960px);
+    height: 100svh;
 
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+}
+
+
+
+#firstname {
+    grid-area: 2 / 2 / 3 / 4;
+}
+#middlename {
+    grid-area: 3 / 3 / 4 / 5;
+}
+#lastname{
+    grid-area: 4 / 4 / 5 / 6; 
+
+}
+
+.content h3{
+    color: var(--color-on-primary);
+    grid-area: 6 / 2 / 7 / 6;
+    margin: auto;
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 800ms;
+}
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 .sidebar{
     display: flex;
@@ -18,61 +62,8 @@
 }
 
 .logo{
-   
     margin-top: var(--spacing-large);
-    width: 128px;
-    height: 128px;
-    
 }
-
-.content{
-    position: relative; 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-}
-
-  
-.content p{
-    align-self: center;
-    margin-top: var(--spacing-xtralarge);
-    color: var(--color-bodytext);
-
-    font-size: var(--size-largebodytext);
-    font-weight: var(--weight-heavybold);
-}
-.name {
-    margin: var(--spacing-xxtralarge);
-    height: 325px;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 2;
-}
-
-.title {
-    text-transform: uppercase;
-    letter-spacing: var(--spacing-small);
-    
-}
-#firstname {
-    align-self: flex-start;
-    margin-left: var(--spacing-xtralarge);
-}
-#middlename {
-    align-self: center;
-
-}
-#lastname{
-    align-self: flex-end;
-
-}
-
-.contactBtn{
-
-
-}
-
 
 .links{
     margin-top: var(--spacing-medium);
@@ -81,7 +72,6 @@
     align-items: center;
     text-align: center;
     gap: var(--spacing-medium);
-    height: 128px;
 
 }
 
@@ -110,11 +100,38 @@
 @media screen and (max-width: 830px) {
     .container{
         flex-direction: column;
+        padding-bottom: 32px;
 
     }
     .content{
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
+  
+
+
+    
+    .name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+    }
+    #firstname {
+        margin-right:0;
+        margin-left: 0;
+    }
+    
+    .content h3{
+        margin: auto;
+        font-size: var(--size-bodytext);
+        text-align: center;
+        text-wrap: balance;
+    }
+
+
 
     .sidebar{
         border: 0px;
@@ -130,26 +147,5 @@
         flex-direction: row;
         height: 128px;
     
-    }
-    .name h1{
-        font-size: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #firstname {
-        align-self: center;
-        margin-left: 0px;
-    }
-    #middlename {
-        align-self: center;
-    
-    }
-    #lastname{
-        align-self: center;
-    
-    }
-    .content p{
-        display: none;
     }
 }

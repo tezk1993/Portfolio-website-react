@@ -112,7 +112,8 @@ export const Projects = ({newref}) => {
   return (
     <section  className={styles.container} id="projects">
       <div className={styles.header}>
-   
+        <div className={styles.sidebar}>
+        </div>
         <h2 ref={newref} className={styles.title}>Projects</h2>
       </div>        
 

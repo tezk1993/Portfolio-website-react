@@ -27,7 +27,6 @@
 
         /*Text Colors*/
         --color-bodytext: #f3f3f3;
-        --color-sectiontitle: #F5CB5C;
         --color-pagetitle: #ffffff;
         --color-textaccent: #8d784079;
         
@@ -53,16 +52,17 @@
     /*Text*/
         
         /*fonts*/
-        --font-primary:"Inter", Arial, Helvetica, sans-serif;
-        --font-roboto: "Roboto";
-        --font-outfit: "Outfit";
-        --font-inter: "Inter";
+        /* --font-primary:"Inter", Arial, Helvetica, sans-serif;
+ */
+        --font-title:"Ostrich Sans", Arial, Helvetica, sans-serif;
+        --font-subtitle: "Archivo Narrow",Arial, Helvetica, sans-serif;
+        --font-bodytext: "Roboto",Arial, Helvetica, sans-serif;
+
         /*Sizes*/
-        --size-largetext: 6rem;
-        --size-mediumtext: 5rem;
-        --size-largebodytext: 2rem;
-        
-        --size-bodytext: 1rem;
+        --size-largetext: clamp(1rem, 10vw + 1rem, 12rem);
+        --size-mediumtext: clamp(1rem, 10vw + 1rem, 6rem);
+        --size-largebodytext: clamp(0.5rem, 10vw + 0.5rem, 2rem);;
+        --size-bodytext: clamp(0.5rem, 10vw + 1rem, 1rem);
         /*Weight*/
         --weight-regular: 400;
         --weight-semibold: 500;

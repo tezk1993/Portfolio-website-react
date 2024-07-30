@@ -164,7 +164,7 @@
         flex-direction: column;
         flex-wrap: wrap;
     
-        gap: var(--spacing-medium);
+        gap: var(--spacing-m);
     }
  
 }

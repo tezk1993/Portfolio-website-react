@@ -10,7 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/abril-fatface": "^5.0.20",
+    "@fontsource/bungee-shade": "^5.0.21",
+    "@fontsource/dejavu-sans": "^5.0.11",
+    "@fontsource/dm-serif-display": "^5.0.20",
     "@fontsource/inter": "^5.0.19",
+    "@fontsource/krona-one": "^5.0.13",
+    "@fontsource/ostrich-sans": "^5.0.11",
     "@fontsource/outfit": "^5.0.13",
     "@fontsource/roboto": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",

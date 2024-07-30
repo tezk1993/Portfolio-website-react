@@ -51,6 +51,7 @@ export const Experience = ({newref}) => {
           <h2 ref={newref} className={styles.title}>Experience</h2>
       </div>        
 
+      <hr className={styles.divider}/>
 
       <div className={styles.content}>
 

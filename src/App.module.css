@@ -6,7 +6,7 @@
     height: 100%;
     background-image: url('/assets/ArtDecoPattern-B84HvN3P.png');
 
-    /* background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png'); */
+    background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png');
     background-repeat: repeat;
     background-size: cover;
     background-size: 30%;

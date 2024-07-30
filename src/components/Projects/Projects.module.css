@@ -1,39 +1,28 @@
 @import "../../";
 
 .container{
-    display: flex;
-    flex-direction: column;
-    height: max(100vh,auto);
-
-    width: 100%;
+  composes: container from "../../shared.css";
 }
-
+/* Header*/
 .header{
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between;
+  composes: header from "../../shared.css";
 }
 
 .title{
-    text-transform:uppercase;
-    text-align: end;
+  composes: title from "../../shared.css";
 }
 
-
 .sidebar{
-    display: flex;
-    flex-direction: row;
-    width: 256px;
-    border-right: 5px solid var(--color-primary);
+  composes: sidebar from "../../shared.css";
 }
 
 .divider{
-    border: 3px solid var(--color-primary);
-    margin: var(--spacing-medium);
+  composes: divider from "../../shared.css";
+
 }
 
 
-
+/* Content */
 .content{
     background-color: var(--color-primary);
     display: flex;

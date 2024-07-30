@@ -7,7 +7,7 @@ interface Props{
     delay
 }
 
-export const Scale = ({children, width = "fit-content",delay = 0} : Props) =>{
+export const Scale = ({children, width = "fit-content",delay = 0, className} : Props) =>{
     const ref = useRef(null);
 
     const isInView = useInView(ref, {once:true});
@@ -21,7 +21,7 @@ export const Scale = ({children, width = "fit-content",delay = 0} : Props) =>{
     },[isInView])
     return(
         <div ref={ref} style={{ position:"relative", width, overflow: "hidden"}}>
-            <motion.div
+            <motion.div 
                 variants={{
                     hidden:{scale:0},
                     visible:{scale:1}
