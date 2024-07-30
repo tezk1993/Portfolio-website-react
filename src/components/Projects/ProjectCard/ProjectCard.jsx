@@ -27,40 +27,37 @@ export const ProjectCard = ({project}) => {
     },
   };
   return (            
-  <Link key={project.title} to={`/projects/${project.title}`} aria-label={`Link to project ${project.title} page` }  state={{project}} onClick={() => {window.scroll(0,0)}}>
-    <motion.div initial="default" whileHover="hover" hover
-    id={styles.card} key={`card-${project.id}`}
-     className={styles.card} 
-     style={ project.title === null || project.title==="" ? { display:'none'} : {display : 'block'} }>
-      <div className={styles.imgcontainer}  >
-        <img src={getImageUrl(project.imgdir+project.cardimg)} alt={`Image of project ${project.title}`}/>
-        <div className={styles.cardimgcaption}>
-          <FontAwesomeIcon icon={faPeopleGroup} style={ project.collaborators === null ? { display:'none'} : {display : 'block'} }   /> {project.collaborators.length +1} 
-          <FontAwesomeIcon icon={faClock} style={ project.duration === null ? { display:'none'} : {display : 'block'} }   /> {project.duration}
-          <FontAwesomeIcon icon={faScrewdriverWrench}   style={ project.tools === null ? { display:'none'} : {display : 'block'} }  
-          />  {project.tools[0]}
-        
-        </div>
-      </div>
-      <div className={styles.textcontainer}>
-        <div className={styles.titlecontainer}>
-          <h3>{project.title}</h3>
+    <motion.div initial="default" whileHover="hover" hover id={styles.card} key={`card-${project.id}`} className={styles.card} style={ project.title === null ? { display:'none'} : {display : 'block'} }>
+        <Link  key={project.title} to={`/projects/${project.title}`} aria-label={`Link to project ${project.title} page` }  state={{project}} onClick={() => {window.scroll(0,0)}}/>
 
-              <motion.i 
-                
-                variants={variants} 
-                transition={{scale:0, rot:0, duration: 0.5, repeat:Infinity, repeatDelay: 1,}} 
-                className= "fas fa-caret-right" 
-                
-              /> 
+        <div className={styles.imgcontainer}  >
+          <img src={getImageUrl(project.imgdir+project.cardimg)} alt={`Image of project ${project.title}`}/>
+          <div className={styles.cardimgcaption}>
+            <FontAwesomeIcon icon={faPeopleGroup} style={ project.collaborators === null ? { display:'none'} : {display : 'block'} }   /> {project.collaborators.length +1} 
+            <FontAwesomeIcon icon={faClock} style={ project.duration === null ? { display:'none'} : {display : 'block'} }   /> {project.duration}
+            <FontAwesomeIcon icon={faScrewdriverWrench}   style={ project.tools === null ? { display:'none'} : {display : 'block'} }  
+            />  {project.tools[0]}
+          
+          </div>
         </div>
-        <h4>{project.role}</h4>
+        <div className={styles.textcontainer}>
+          <div className={styles.titlecontainer}>
+            <h3>{project.title}</h3>
 
-        <p>{project.carddescription}</p>
-      </div>
+                <motion.i 
+                  
+                  variants={variants} 
+                  transition={{scale:0, rot:0, duration: 0.5, repeat:Infinity, repeatDelay: 1,}} 
+                  className= "fas fa-caret-right" 
+                  
+                /> 
+          </div>
+          <h4>{project.role}</h4>
+
+          <p>{project.carddescription}</p>
+        </div>
 
     </motion.div>
-    </Link>
 
   );
 };

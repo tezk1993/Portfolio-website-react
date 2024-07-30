@@ -11,7 +11,7 @@
 .content{
     display: grid;
     grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: 1fr repeat(3, 2fr) repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     width: 100%;
@@ -20,12 +20,18 @@
 
 
 #firstname {
+    height: 100%;
+
     grid-area: 2 / 2 / 3 / 4;
 }
 #middlename {
+    height: 100%;
+
     grid-area: 3 / 3 / 4 / 5;
 }
 #lastname{
+    height: 100%;
+
     grid-area: 4 / 4 / 5 / 6; 
 
 }

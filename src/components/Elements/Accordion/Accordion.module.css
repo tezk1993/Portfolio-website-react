@@ -1,8 +1,6 @@
 @import "../../../vars.css";
 
-.wrapper{
 
-}
 
 .accordion{
     display: flex;
@@ -13,9 +11,9 @@
 }
 
 
-/* Item */
+/* Card */
 
-#item{
+#card{
     background: var(--color-dark);
     cursor: pointer;
     margin-bottom: var(--spacing-xtrasmall);
@@ -25,21 +23,10 @@
     border: 2px transparent solid;
 }
 
-#item:hover{
+#card:hover{
     border: 2px var(--color-primary) solid;
 }
 
-.itemcollapsed{
-
-    transition: width 0.5s cubic-bezier(0,1,0,1);
-
-}
-
-
-.itemopened{
-    margin: var(--spacing-small);
-    transition: width 0.5s cubic-bezier(0,1,0,1);
-}
 
 
 .title{
@@ -47,55 +34,68 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    gap: var(--spacing-small);
+    padding: var(--spacing-xtrasmall);
     
 }
+
 .title img[src=""]{
     display: none;
 }
 
-
 .organisation{
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xtrasmall);
+    gap:var(--spacing-small)
 }
+
 
 .caret{
+    display: flex;
+}
+.caret i{
+    margin: auto;
     color: var(--color-primary);
     font-size: 2rem;
-    display: flex;
-    justify-content: center;
 }
 
-#tab{
-    overflow: hidden;
-    background-color: var(--color-bg);
-    border-radius: 10px;
-    margin-top: var(--spacing-xtrasmall);
-    
-}
-#tab h4{
-    margin: var(--spacing-medium);
-}
-#tab ul{
-    padding: var(--spacing-xtrasmall);
-}
-
-#tab li{
-    margin-bottom: var(--spacing-small);
-    margin-left: var(--spacing-medium);
-}
-
-/* Description */
 .collapsed{
     max-height: 0;
     height: auto;
     transition: all 0.5s cubic-bezier(0,1,0,1);
 }
 
+/* Card Opened */
+
+
 .opened{
     height: auto;
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1,0,1,0);
+}
+
+
+/* Content */
+
+.divider{
+    composes: divider from "../../../shared.css";
+}
+
+#content{
+    overflow: hidden;
+    background-color: var(--color-bg);
+    border-radius: 10px;
+    margin-top: var(--spacing-xtrasmall);
     
+}
+#content h4{
+    margin: var(--spacing-small) 0 var(--spacing-small) 0;
+}
+#content ul{
+    list-style: none;
+}
+
+#content li{
+    margin-bottom: var(--spacing-small);
+    margin-left: var(--spacing-medium);
 }

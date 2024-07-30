@@ -43,7 +43,6 @@
 .tagtab i{
     font-size: 3rem;
     color: var(--color-dark);
-    cursor: pointer;
     margin-left: var(--spacing-xtrasmall);
 }
 
