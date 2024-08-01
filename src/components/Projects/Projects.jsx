@@ -22,7 +22,6 @@ export const Projects = ({newref}) => {
 
   const [databaseprojects, setDatabaseProjects] = useState([]);
 
-  const [sortedProjects, setSortedProjects] = useState([]);
 
 
   const [selectedtags, setSelectedTags] = useState([]);
@@ -30,16 +29,7 @@ export const Projects = ({newref}) => {
 
   const [tagbarstate, setTagBarState] = useState(false);
 
-  // const variants = {
-  //   default: {
-     
-  //   },
-  //   hover:{
-  //     scale: [1.4, 1.4, 1.4, 1.4, 1],
-  //     rotate: [0, -20, 20, 0, 0],
-  
-  //   }
-  // };
+
   useEffect(() => {
       getProjects();
     }, []);
@@ -58,18 +48,15 @@ export const Projects = ({newref}) => {
 
   const addTag = useCallback(
     (tagId) => () => {
-      const tagsFiltered = availabletags.filter((tag) => {
-         return tag !== tagId;
-      });
+
+      let tagsFiltered = [...new Set(databaseprojects.filter((proj) =>  matchTags(proj.tags, [...selectedtags, tagId])).map(x => x.tags).flat(1))];
+      tagsFiltered = tagsFiltered.filter( ( el ) => ![...selectedtags, tagId].includes( el ) );
 
       setAvailableTags(tagsFiltered);
 
       if (!selectedtags.includes(tagId)) {
         return setSelectedTags((prevTags) => [...prevTags, tagId]);
       }
-
-   
-
     },
     [selectedtags,availabletags]
   );
@@ -79,12 +66,9 @@ export const Projects = ({newref}) => {
       const tagsFiltered = selectedtags.filter((tag) => {
         return tag !== tagId;
       });
-      setSelectedTags(tagsFiltered);
 
-      if (!availabletags.includes(tagId)) {
-        return setAvailableTags((prevTags) => [...prevTags, tagId]);
-      }
-     
+      setSelectedTags(tagsFiltered);
+      setAvailableTags([...new Set(databaseprojects.filter((proj) =>  matchTags(proj.tags, tagsFiltered)).map(x => x.tags).flat(1))]);
     },
     [selectedtags,availabletags]
   );
