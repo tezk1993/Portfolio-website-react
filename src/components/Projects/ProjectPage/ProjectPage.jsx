@@ -26,8 +26,8 @@ export const ProjectPage = () => {
               </div>
             <div className={styles.content}>
       
-              <div className={styles.content_maindisplay}>
-              <iframe src={project.maindisplay} ></iframe>
+              <div className={styles.content_maindisplay} style={ project.maindisplay === null ? { display:'none'} : {display : 'block'} }>
+                <iframe src={project.maindisplay} ></iframe>
               </div>
               <div className={styles.content_lower}>
                 <div className={styles.content_lower_left}>

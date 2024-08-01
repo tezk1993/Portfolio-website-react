@@ -26,12 +26,14 @@ export const ProjectCard = ({project}) => {
       rotate: [0,-20 ,20,0, 0],
     },
   };
+
   return (            
     <motion.div initial="default" whileHover="hover" hover id={styles.card} key={`card-${project.id}`} className={styles.card} style={ project.title === null ? { display:'none'} : {display : 'block'} }>
-        <Link  key={project.title} to={`/projects/${project.title}`} aria-label={`Link to project ${project.title} page` }  state={{project}} onClick={() => {window.scroll(0,0)}}/>
+        <Link  key={project.title} to={`/projects/${project.title}`} aria-label={`Link to project ${project.title} page` }  state={{project}} onClick={() => {window.scroll(0,0)}}>
+        </Link>
 
-        <div className={styles.imgcontainer}  >
-          <img src={getImageUrl(project.imgdir+project.cardimg)} alt={`Image of project ${project.title}`}/>
+        <div className={styles.imgcontainer}   >
+          <img src={getImageUrl(project.imgdir+project.cardimg)} alt={`Image of project ${project.title}`} style={ project.cardimg === "" ? { display:'none'} : {display : 'block'} }/>
           <div className={styles.cardimgcaption}>
             <FontAwesomeIcon icon={faPeopleGroup} style={ project.collaborators === null ? { display:'none'} : {display : 'block'} }   /> {project.collaborators.length +1} 
             <FontAwesomeIcon icon={faClock} style={ project.duration === null ? { display:'none'} : {display : 'block'} }   /> {project.duration}

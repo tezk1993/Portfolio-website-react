@@ -21,6 +21,10 @@ export const Projects = ({newref}) => {
 
 
   const [databaseprojects, setDatabaseProjects] = useState([]);
+
+  const [sortedProjects, setSortedProjects] = useState([]);
+
+
   const [selectedtags, setSelectedTags] = useState([]);
   const [availabletags, setAvailableTags] = useState([]);
 
@@ -54,15 +58,18 @@ export const Projects = ({newref}) => {
 
   const addTag = useCallback(
     (tagId) => () => {
-      console.log(tagId);
       const tagsFiltered = availabletags.filter((tag) => {
          return tag !== tagId;
       });
+
       setAvailableTags(tagsFiltered);
 
       if (!selectedtags.includes(tagId)) {
         return setSelectedTags((prevTags) => [...prevTags, tagId]);
       }
+
+   
+
     },
     [selectedtags,availabletags]
   );
@@ -88,18 +95,13 @@ export const Projects = ({newref}) => {
   };
 
   function openTagbar() {
-    console.log("opentagbar");
     if(!tagbarstate){
       document.getElementById("tagcontainer").style.width = "0px";
       document.getElementById("tagcontainer").style.padding = "0px";
-
       document.getElementById("caret").className = "fas fa-caret-right";
-
-      
     }else{
       document.getElementById("tagcontainer").style.width = "288px";
       document.getElementById("tagcontainer").style.padding = "16px";
-
       document.getElementById("caret").className = "fas fa-caret-left";
 
     }

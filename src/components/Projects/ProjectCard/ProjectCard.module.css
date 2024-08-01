@@ -54,6 +54,8 @@
   min-height: 284px;
   width: 17.75rem;
   height: 17.75rem;
+  object-fit: cover;
+
 }
 
 .cardimgcaption{

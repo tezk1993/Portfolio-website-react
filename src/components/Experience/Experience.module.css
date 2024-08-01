@@ -131,6 +131,8 @@
     .title{
         text-transform:uppercase;
         margin-right: 0px;
+        padding: 0 !important;
+        margin: 0;
     }
 
     .cardcontainer{
@@ -143,9 +145,12 @@
         align-items: center;
     }
     .sidebar{
-        border-right: 0px solid var(--color-primary);
+        border-right: 0px solid var(--color-primary) !important;
         margin: var(--spacing-medium);;
+        
     }
+
+    
     .header .sidebar{
         display: none;
     }

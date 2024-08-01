@@ -8,7 +8,7 @@
     padding: 0px var(--spacing-small) var(--spacing-small) var(--spacing-small);
     min-height: 100%;
     background-image: url('/assets/ArtDecoPattern-B84HvN3P.png');
-
+    height: 100vh;
     /* background-image: url('../../../Assets/images/patterns/ArtDecoPattern.png'); */
     background-repeat: repeat;
     background-size: cover;

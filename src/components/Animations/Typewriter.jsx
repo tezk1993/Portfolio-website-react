@@ -10,8 +10,6 @@ const useTypewriter = (text, speed= 50,delay = 0) => {
     const typingInterval =   setTimeout(() => {setInterval(() => {
       if (i < text.length) {
         setDisplayText(prevtext = prevtext + text.charAt(i));
-        console.log(prevtext)
-
         i++;
       } else {
         clearInterval(typingInterval);
