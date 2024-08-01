@@ -33,7 +33,7 @@ export const ProjectCard = ({project}) => {
         </Link>
 
         <div className={styles.imgcontainer}   >
-          <img src={getImageUrl(project.imgdir+project.cardimg)} alt={`Image of project ${project.title}`} style={ project.cardimg === "" ? { display:'none'} : {display : 'block'} }/>
+          <img loading="lazy" src={getImageUrl(project.imgdir+project.cardimg)} alt={`Image of project ${project.title}`} style={ project.cardimg === "" ? { display:'none'} : {display : 'block'} }/>
           <div className={styles.cardimgcaption}>
             <FontAwesomeIcon icon={faPeopleGroup} style={ project.collaborators === null ? { display:'none'} : {display : 'block'} }   /> {project.collaborators.length +1} 
             <FontAwesomeIcon icon={faClock} style={ project.duration === null ? { display:'none'} : {display : 'block'} }   /> {project.duration}

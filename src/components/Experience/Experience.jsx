@@ -67,7 +67,7 @@ export const Experience = ({newref}) => {
                       return(
                         <div key={i + x.name} className={styles.skill}>
                           <div>
-                              <img src={getImageUrl(x.imgdir + x.iconname)} alt={`${x.name} Logo`}/> 
+                              <img loading="lazy" src={getImageUrl(x.imgdir + x.iconname)} alt={`${x.name} Logo`}/> 
                           </div>
                           <p className={styles.tooltip}>{x.name}</p>
                         </div>
