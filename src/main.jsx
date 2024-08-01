@@ -3,17 +3,12 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-import "@fontsource/outfit"
-import "@fontsource/roboto"
-import "@fontsource/krona-one"
-import '@fontsource/ostrich-sans/300.css';
-import '@fontsource/ostrich-sans/400.css';
-import '@fontsource/ostrich-sans/700.css';
-import '@fontsource/ostrich-sans/900.css';
+
 
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import { ErrorPage } from './components/Pages/ErrorPage.jsx'
 import { ProjectPage } from './components/Projects/ProjectPage/ProjectPage.jsx'
+
 
 const router = createBrowserRouter([
   {

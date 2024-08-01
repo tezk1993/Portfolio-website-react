@@ -18,6 +18,16 @@ import { Footer } from "./components/Footer/Footer";
 
 import { createClient } from "@supabase/supabase-js";
 
+import "@fontsource/roboto"
+
+import '@fontsource/ostrich-sans/300.css';
+import '@fontsource/ostrich-sans/400.css';
+import '@fontsource/ostrich-sans/700.css';
+import '@fontsource/ostrich-sans/900.css';
+import ostrichSans300 from '@fontsource/ostrich-sans/files/ostrich-sans-latin-300-normal.woff2?url';
+import ostrichSans400 from '@fontsource/ostrich-sans/files/ostrich-sans-latin-400-normal.woff2?url';
+import ostrichSans700 from '@fontsource/ostrich-sans/files/ostrich-sans-latin-700-normal.woff2?url';
+import ostrichSans900 from '@fontsource/ostrich-sans/files/ostrich-sans-latin-900-normal.woff2?url';
 
 
 library.add(fab, faCheckSquare, faCoffee)
@@ -95,6 +105,10 @@ function App() {
   return (
 
     <div className={styles.App} >
+      <link rel="preload" as="font" type="font/woff2" href={ostrichSans300} crossorigin/>
+      <link rel="preload" as="font" type="font/woff2" href={ostrichSans400} crossorigin/>
+      <link rel="preload" as="font" type="font/woff2" href={ostrichSans700} crossorigin/>
+      <link rel="preload" as="font" type="font/woff2" href={ostrichSans900} crossorigin/>
 
       <Navbar toggle={toggle} selected={selected}/>  
       <Hero newref={heroRef}/>
