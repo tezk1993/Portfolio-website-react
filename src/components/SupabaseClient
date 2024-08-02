@@ -1,6 +1,5 @@
 
 import { createClient } from "@supabase/supabase-js";
-
 const options = {
   auth: {
     localStorage: true,
@@ -9,9 +8,9 @@ const options = {
     detectSessionInUrl: true,
   },
 };
-
-const supabaseUrl = "https://pxggcbphlowxbpmwnicn.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4Z2djYnBobG93eGJwbXduaWNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjEyMTk5OTcsImV4cCI6MjAzNjc5NTk5N30.tfFRb7_qRaB6HEDNL5s6VoWLSgaY6ZiXVLQYm2SZ-xE";
+console.log(import.meta.env.VITE_SOME_KEY);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY;
 
 const client = createClient(supabaseUrl, supabaseKey);
 
