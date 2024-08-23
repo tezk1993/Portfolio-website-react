@@ -14,8 +14,11 @@ import supabase from '../SupabaseClient';
 
 export const Experience = ({newref}) => {
 
-    const [projectsdatabase, setProjectsDatabase] = useState([]);
+    const [experiencedatabase, setExperienceDatabase] = useState([]);
     const [skillsdatabase, setSkillsDatabase] = useState([]);
+    const [certifcatedatabase, setCertificateDatabase] = useState([]);
+
+
     useEffect(() => {
         getProjects();
         getSkills();
@@ -26,7 +29,8 @@ export const Experience = ({newref}) => {
       data.sort(function(a,b){
         return new Date(b.datestart) - new Date(a.dateend);
       });
-        setProjectsDatabase(data);
+        setExperienceDatabase(data.filter(experience => experience.Type === "Education"));
+        setCertificateDatabase(data.filter(experience => experience.Type === "Certificate"));
     }
     async function getSkills() {
       const { data } = await supabase().from("Skills").select();
@@ -77,17 +81,29 @@ export const Experience = ({newref}) => {
               </div>
             )})
           }   
-        </div>
-
-
-
-        <div className={styles.cardcontainer}>
-          <div className={styles.history}> 
-                    <Accordion key="0" data={projectsdatabase}/>      
-            </div>
         
         </div>
 
+
+        <div className={styles.main}>
+          <div className={styles.cardcontainer}>
+              <div className={styles.history}> 
+                  <Accordion key="0" data={experiencedatabase}/>      
+              </div>
+          
+          </div>
+          {/* <div className={styles.certificateContainer}>
+                <ul>
+                {certifcatedatabase.map((item, i) => (
+                  <li>
+                    <h4>
+                      {item.role}
+                    </h4>
+                  </li>
+                ))}      
+                </ul>
+              </div> */}
+          </div>
       </div>
 
 

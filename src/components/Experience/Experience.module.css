@@ -106,14 +106,24 @@
     flex-direction: row;
     min-height: 100vh;
 }
+.main{
+    width: calc(100% - 256px);
+    display: flex;
+    margin: var(--spacing-medium);
+}
 
 .cardcontainer {
     display: flex;
-    justify-content: center;
-    width: calc(100% - 256px);
+    justify-content: end;
+    width: 75%;
 }
   
+.certificateContainer {
+    display: flex;
+    justify-content: center;
+    width: 50%;
 
+}
 
 
 

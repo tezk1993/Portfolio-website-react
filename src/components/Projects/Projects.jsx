@@ -1,56 +1,52 @@
-import React from 'react'
-import { getImageUrl, getLoremIpsum } from '../../utils'
-import styles from "./Projects.module.css"
+import React from "react";
+import { getImageUrl, getLoremIpsum } from "../../utils";
+import styles from "./Projects.module.css";
 import projects from "../../data/projects.json";
-import { ProjectCard } from './ProjectCard/ProjectCard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
-import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
-import { useState, useCallback, useId , useEffect} from 'react';
-import { Link } from 'react-router-dom';
-import supabase from '../SupabaseClient';
-import { HiThere } from '../Animations/HiThere';
+import { ProjectCard } from "./ProjectCard/ProjectCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { useState, useCallback, useId, useEffect } from "react";
+import { Link } from "react-router-dom";
+import supabase from "../SupabaseClient";
+import { HiThere } from "../Animations/HiThere";
 import { motion } from "framer-motion";
 
-
-
-
-
-export const Projects = ({newref}) => {
-
-
+export const Projects = ({ newref }) => {
   const [databaseprojects, setDatabaseProjects] = useState([]);
-
-
 
   const [selectedtags, setSelectedTags] = useState([]);
   const [availabletags, setAvailableTags] = useState([]);
 
   const [tagbarstate, setTagBarState] = useState(false);
 
-
   useEffect(() => {
-      getProjects();
-    }, []);
+    getProjects();
+  }, []);
 
   async function getProjects() {
     const { data } = await supabase().from("Projects").select();
-    setAvailableTags([...new Set(data.map(item => item.tags).flat(1))])
-    data.sort(function(a,b){
+    setAvailableTags([...new Set(data.map((item) => item.tags).flat(1))]);
+    data.sort(function (a, b) {
       return new Date(b.dateofproject) - new Date(a.dateofproject);
     });
     setDatabaseProjects(data);
   }
 
-
   const id = useId();
 
   const addTag = useCallback(
     (tagId) => () => {
-
-      let tagsFiltered = [...new Set(databaseprojects.filter((proj) =>  matchTags(proj.tags, [...selectedtags, tagId])).map(x => x.tags).flat(1))];
-      tagsFiltered = tagsFiltered.filter( ( el ) => ![...selectedtags, tagId].includes( el ) );
+      let tagsFiltered = [
+        ...new Set(
+          databaseprojects
+            .filter((proj) => matchTags(proj.tags, [...selectedtags, tagId]))
+            .map((x) => x.tags)
+            .flat(1),
+        ),
+      ];
+      tagsFiltered = tagsFiltered.filter(
+        (el) => ![...selectedtags, tagId].includes(el),
+      );
 
       setAvailableTags(tagsFiltered);
 
@@ -58,7 +54,7 @@ export const Projects = ({newref}) => {
         return setSelectedTags((prevTags) => [...prevTags, tagId]);
       }
     },
-    [selectedtags,availabletags]
+    [selectedtags, availabletags],
   );
 
   const deleteTag = useCallback(
@@ -68,73 +64,73 @@ export const Projects = ({newref}) => {
       });
 
       setSelectedTags(tagsFiltered);
-      setAvailableTags([...new Set(databaseprojects.filter((proj) =>  matchTags(proj.tags, tagsFiltered)).map(x => x.tags).flat(1))]);
+      setAvailableTags([
+        ...new Set(
+          databaseprojects
+            .filter((proj) => matchTags(proj.tags, tagsFiltered))
+            .map((x) => x.tags)
+            .flat(1),
+        ),
+      ]);
     },
-    [selectedtags,availabletags]
+    [selectedtags, availabletags],
   );
 
- 
   const matchTags = (current, target) => {
     return target.every((tag) => current.includes(tag));
   };
 
   function openTagbar() {
-    if(!tagbarstate){
+    if (!tagbarstate) {
       document.getElementById("tagcontainer").style.width = "0px";
       document.getElementById("tagcontainer").style.padding = "0px";
       document.getElementById("caret").className = "fas fa-caret-right";
-    }else{
+    } else {
       document.getElementById("tagcontainer").style.width = "288px";
       document.getElementById("tagcontainer").style.padding = "16px";
       document.getElementById("caret").className = "fas fa-caret-left";
-
     }
     setTagBarState(!tagbarstate);
-
   }
-  
-
 
   return (
-    <section  className={styles.container} id="projects">
+    <section className={styles.container} id='projects'>
       <div className={styles.header}>
-        <div className={styles.sidebar}>
-        </div>
-        <h2 ref={newref} className={styles.title}>Projects</h2>
-      </div>        
+        <div className={styles.sidebar}></div>
+        <h2 ref={newref} className={styles.title}>
+          Projects
+        </h2>
+      </div>
 
-      <hr className={styles.divider}/>
+      <hr className={styles.divider} />
       <div className={styles.content}>
-
         <div className={styles.contentsidebar}>
-
-          <div   className={styles.tagtab}>
-            <i id='caret' className= "fas fa-caret-left" onClick={openTagbar}/>
-            <div id="tagcontainer" className={styles.tagcontainer}>
-            <h5> Selected tags</h5>
+          <div className={styles.tagtab}>
+            <i id='caret' className='fas fa-caret-left' onClick={openTagbar} />
+            <div id='tagcontainer' className={styles.tagcontainer}>
+              <h5> Selected tags</h5>
               <div className={styles.tags}>
-        
-
-              {selectedtags.length > 0
-                  ? selectedtags.map((tag) => {
-                      return (
-                        <button
-                          key={`selected-close-button-${tag}`}
-                          className={styles.tag}
-                          onClick={deleteTag(tag)}
-                          // onClick={deleteTag(tag)}
-
-                        >
-                          {tag}
-                        </button>
-                      );
-                    })
-                  : <p>No tags selected</p>}
-            </div>
-            <h5> Available tags</h5>
-            <div className={styles.tags} >
-                {availabletags.length > 0
-                ? availabletags.map((tag) => {
+                {selectedtags.length > 0 ? (
+                  selectedtags.map((tag) => {
+                    return (
+                      <button
+                        key={`selected-close-button-${tag}`}
+                        className={styles.tag}
+                        onClick={deleteTag(tag)}
+                        // onClick={deleteTag(tag)}
+                      >
+                        {tag}
+                      </button>
+                    );
+                  })
+                ) : (
+                  <p>No tags selected</p>
+                )}
+              </div>
+              <h5> Available tags</h5>
+              <div className={styles.tags}>
+                {availabletags.length > 0 ? (
+                  availabletags.map((tag) => {
                     return (
                       <button
                         key={`available-close-button-${tag}`}
@@ -142,33 +138,27 @@ export const Projects = ({newref}) => {
                         // onClick={() => {addTag(tag); deleteAvailableTag(tag);}}
                         // onClick={addTag(tag)}
                         onClick={addTag(tag)}
-                        >
+                      >
                         {tag}
                       </button>
                     );
                   })
-                : <p>No tags available</p>}
+                ) : (
+                  <p>No tags available</p>
+                )}
               </div>
             </div>
           </div>
-
         </div>
-
-
 
         <div className={styles.cardcontainer}>
-            {databaseprojects
-            .filter((proj) =>  matchTags(proj.tags, selectedtags))
+          {databaseprojects
+            .filter((proj) => matchTags(proj.tags, selectedtags))
             .map((x, id) => {
-              return(
-                <ProjectCard key={id} project={x} />
-              )
+              return <ProjectCard key={id} project={x} />;
             })}
         </div>
-
       </div>
-
-
     </section>
-  )
-}
+  );
+};
