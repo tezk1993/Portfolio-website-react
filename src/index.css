@@ -108,6 +108,13 @@ p{
 
 }
 
+span {
+  padding: 0;
+	text-align: center;
+  color: var(--color-on-primary);
+  font-size: var(--size-bodytext);
+  font-family: var(--font-bodytext);
+}
 /* Grouping content
    ========================================================================== */
 

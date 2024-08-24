@@ -8,7 +8,9 @@ import skills from "../../data/skills.json";
 import history from "../../data/history.json";
 import { Accordion } from '../Elements/Accordion/Accordion';
 import supabase from '../SupabaseClient';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { CertificateModal } from '../Elements/CertificateModal/CertificateModal';
 
 
 
@@ -81,29 +83,26 @@ export const Experience = ({newref}) => {
               </div>
             )})
           }   
-        
+                          <h3>Certificates</h3>
+
+          <div className={styles.certificateContainer}>
+            
+                <ul>
+                {certifcatedatabase.map((item, i) => (
+                  <CertificateModal certificate={item} />
+                ))}      
+                </ul>
+              </div> 
         </div>
 
 
-        <div className={styles.main}>
           <div className={styles.cardcontainer}>
               <div className={styles.history}> 
                   <Accordion key="0" data={experiencedatabase}/>      
-              </div>
+          </div>
           
           </div>
-          {/* <div className={styles.certificateContainer}>
-                <ul>
-                {certifcatedatabase.map((item, i) => (
-                  <li>
-                    <h4>
-                      {item.role}
-                    </h4>
-                  </li>
-                ))}      
-                </ul>
-              </div> */}
-          </div>
+ 
       </div>
 
 

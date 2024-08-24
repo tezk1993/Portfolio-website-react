@@ -80,28 +80,27 @@
 
 
 
-button {
+.tag {
   background-color: var(--color-primary);
 
   -webkit-box-shadow: 2px 3px 3px #000000;
   -moz-box-shadow: 2px 3px 3px #000000;
   box-shadow: 2px 3px 3px #000000;
   color: var(--color-on-secondary);
-  font-size: 20px;
-  padding: var(--spacing-xtrasmall);
+  padding: var(--spacing-xxtrasmall);
   text-decoration: none;
-  margin: var(--spacing-medium);
+  cursor: pointer;
 }
 
 
 
-button:hover,
-button:focus-visible{
+.tag:hover,
+.tag:focus-visible{
   background-color: var(--color-secondary);
   
 }
 
-button:active {
+.tag:active {
   background-color: var(--color-secondary);
 
 }

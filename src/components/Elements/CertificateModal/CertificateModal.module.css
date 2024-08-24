@@ -1,0 +1,76 @@
+@import "../../../vars.css";
+
+
+.modal{
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+
+.container{
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img{
+    object-fit: contain;
+    max-width: 1120px;
+    
+}
+.closeButton{
+    position: absolute;
+    top: 16px;
+    right: 32px;
+    color: var(--color-primary);
+    font-size: 48px;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: transparent;
+    border-color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.closeButton:hover{
+    font-size: 52px;
+    color: var(--color-secondary);
+
+}
+
+.certificate{
+    display:  flex;
+    flex-direction: column;
+
+    padding: 8px;
+
+    background-color: var(--color-surface);
+    border-radius: var(--spacing-xtrasmall);
+    border: 2px solid var(--color-primary);
+    display:  flex;
+
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+}
+
+.certificate:hover{
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
+}
+/* 
+@media screen and (max-width: 830px) {
+    .container{
+        height: 40%;
+    }
+ 
+
+} */
