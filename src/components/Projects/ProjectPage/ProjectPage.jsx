@@ -5,25 +5,47 @@ import projects from "../../../data/projects.json";
 
 import { useState, useCallback, useId } from 'react';
 import {Link, useParams,useNavigate,useLocation  } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretLeft, faCaretRight, faXmark } from '@fortawesome/free-solid-svg-icons';
 
-
+Number.prototype.mod = function (n) {
+  "use strict";
+  return ((this % n) + n) % n;
+};
 
 export const ProjectPage = () => {
 
   const location = useLocation()
-  const { project } = location.state
-
-  console.log(project.maindisplay)
+  const { project,projects } = location.state
   const params = useParams();
-
   const navigate = useNavigate();
+  const index = projects.findIndex((a) => a === project)
+  const length = projects.length;
+  const prev = projects[((index-1 % length) + length) % length];
+  const next = projects[((index+1 % length) + length) % length];
+
  return (
     <section  className={styles.container} id="projects">
-      <div className={styles.content}>
+      <div className={styles.header}>
+      
+      <Link to="/" className={styles.link}  > <img className={styles.logo} src={getImageUrl('images/Logo_Finished_Light.webp')} alt={` Logo`}/> </Link> 
 
-      <div className={styles.exit}>
-                <div  > <Link to="/"><i className="fa-solid fa-xmark"></i> </Link> </div>
-              </div>
+        <div>
+          <Link className={styles.link} key={prev.title} to={`/projects/${prev.title}`} aria-label={`Link to project ${prev.title} page` }  state={{project:prev,projects}} onClick={() => {window.scroll(0,0)}}>
+            <FontAwesomeIcon  icon={faCaretLeft}/>
+          </Link>        
+          <Link className={styles.link}   key={next.title} to={`/projects/${next.title}`} aria-label={`Link to project ${next.title} page` }  state={{project:next,projects}} onClick={() => {window.scroll(0,0)}}>
+            <FontAwesomeIcon  icon={faCaretRight}/>
+          </Link>
+        </div>
+          <div >
+                <Link to="/#projects" className={styles.link}  ><FontAwesomeIcon icon={faXmark}/> </Link> 
+          </div>
+      </div>
+
+      <div className={styles.content}>
+       
+     
             <div className={styles.content}>
       
               <div className={styles.content_maindisplay} style={ project.maindisplay === null ? { display:'none'} : {display : 'block'} }>
@@ -69,13 +91,16 @@ export const ProjectPage = () => {
                               );
                             })}
                           </li> 
-                          <li className={styles.content_details_element}>
+                          <li className={styles.content_details_element} style={ project.links === null ? { display:'none'} : {display : 'block'} }>
                             <h4>Link</h4>
                             <br></br>
-                            {project.links.map((linkinfo) => {
+                            
+                            {
+                              project.links?.map((linkinfo) => {
                               return (
                                 <a href={linkinfo.link} target="_blank">  <h5>{linkinfo.linktype}</h5> </a>
                               );
+                              
                             })}
                           </li> 
                         </ul>
@@ -91,7 +116,7 @@ export const ProjectPage = () => {
                             <div className={styles.content_gallery_image}>
 
                               <h5>{image.imagetitle}</h5>
-                                <img alt={`${image.imageSrc}`} src={getImageUrl(project.imgdir + image.imageSrc) }  tabindex="1" />
+                                <img alt={`${image.imageSrc}`} src={getImageUrl(project.imgdir + image.imageSrc) } />
                               <p>{image.imageText}</p>
                             </div>
                           );

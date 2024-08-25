@@ -8,6 +8,7 @@ import './index.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import { ErrorPage } from './components/Pages/ErrorPage.jsx'
 import { ProjectPage } from './components/Projects/ProjectPage/ProjectPage.jsx'
+import ScrollToAnchor from './components/Elements/ScrollToAnchor.jsx'
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     element:<ProjectPage />,
     errorElement: <ErrorPage />
   },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

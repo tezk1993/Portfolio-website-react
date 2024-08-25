@@ -5,7 +5,6 @@
 .container{
     width: 100%;
     background-color: var(--color-lightdark);
-    padding: 0px var(--spacing-small) var(--spacing-small) var(--spacing-small);
     min-height: 100%;
     background-image: url('/assets/ArtDecoPattern-B84HvN3P.png');
     height: 100vh;
@@ -17,32 +16,44 @@
     overflow: auto;    
 }
 
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    background-color: var(--color-background);
+    padding: 0 16px;
+    z-index: 1;
+    width: calc(100vw - 10px);    
+    align-items: center;
+}
+
+.logo{
+    width: 64px;
+    height: 64px;
+}
+.link{
+    font-size: 3em;
+    color: var(--color-primary);
+    padding: 8px;
+}
+
+.link:hover{
+    font-size: 3em;
+    color: var(--color-secondary);
+
+}
+
 
 
 .content{
+    padding: 48px var(--spacing-small) 0 var(--spacing-small) ;
     display: flex;
     flex-direction: column;
 }
 
-.exit{
-    
-    width: 4rem;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
 
-}
 
-.exit button{
-
-}
-
-.exit i{
-    color: var(--color-primary);
-    font-size: 3em;
-}
 .content_maindisplay{
     background-color: var(--color-lightdark);
     position: relative;
@@ -71,7 +82,7 @@
 
 .content_lower_right{
     width: 100%;
-
+    margin-left: 32px;
 }
 
 .content_title_container h2{
@@ -117,7 +128,6 @@
 
 .content_details_description{
     color: var(--color-bodytext);
-    column-count: 2;
 }
 
 .content_gallery{

@@ -12,9 +12,9 @@ export const Footer = () => {
         <div className={styles.containerleft}> 
           <div className={styles.version}>
             <div className={styles.label}>
-              <p>v1.0.0</p>
+              <p>v1.2.0</p>
             </div>
-            <p>Last Updated 22-07-2024</p>
+            <p>Last Updated 25-08-2024</p>
           </div>
           
     

@@ -31,6 +31,7 @@ export const Hero = ({newref}) => {
                 > 
                     <i className={"fa-solid fa-envelope"} /> 
                 </a>
+
             </li>
             <li className={styles.link} >
                 <a 
@@ -91,7 +92,7 @@ export const Hero = ({newref}) => {
             <Typewriter className={styles.title} id={styles.lastname} text='Andersen'speed={100} delay={150}/>
 
      
-              <h3 className={styles.description}>SOFTWARE ENGINEER, FRONT END & APP DEVELOPER.</h3>
+              <h3 className={styles.description}>Game developer, Web Developer and Dungeon Master</h3>
           </div>
     </section>
   )

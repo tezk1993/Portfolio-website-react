@@ -85,6 +85,8 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-medium);
+
+    padding: 4px;
 }
 
 .link a{
@@ -99,7 +101,11 @@
     margin: var(--spacing-xtrasmall);
 }
 
+.link a:hover{
+    font-size: 2.1em;
+    color: var(--color-secondary);
 
+}
 
 
 

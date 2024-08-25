@@ -155,7 +155,7 @@ export const Projects = ({ newref }) => {
           {databaseprojects
             .filter((proj) => matchTags(proj.tags, selectedtags))
             .map((x, id) => {
-              return <ProjectCard key={id} project={x} />;
+              return <ProjectCard key={id} project={x} projects={databaseprojects}/>;
             })}
         </div>
       </div>

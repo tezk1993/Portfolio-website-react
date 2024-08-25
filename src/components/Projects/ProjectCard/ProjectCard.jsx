@@ -12,7 +12,7 @@ import { useState, useCallback, useId , useEffect} from 'react';
 
 import { Link } from 'react-router-dom';
 // export const ProjectCard = (props) => {
-export const ProjectCard = ({project}) => {
+export const ProjectCard = ({project,projects}) => {
 
 
   const variants = {
@@ -29,7 +29,7 @@ export const ProjectCard = ({project}) => {
 
   return (            
     <motion.div initial="default" whileHover="hover" hover id={styles.card} key={`card-${project.id}`} className={styles.card} style={ project.title === null ? { display:'none'} : {display : 'block'} }>
-        <Link  key={project.title} to={`/projects/${project.title}`} aria-label={`Link to project ${project.title} page` }  state={{project}} onClick={() => {window.scroll(0,0)}}>
+        <Link  key={project.title} to={`/projects/${project.title}`} aria-label={`Link to project ${project.title} page` }  state={{project,projects}} onClick={() => {window.scroll(0,0)}}>
         </Link>
 
         <div className={styles.imgcontainer}   >
