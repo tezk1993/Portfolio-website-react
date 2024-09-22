@@ -82,17 +82,10 @@ export const Hero = ({newref}) => {
         </div>
 
           <div className={styles.content}>
-         {/* <h1  className={styles.title} id={styles.firstname}></h1>
-              <h1  className={styles.title}  id={styles.middlename}>Schau</h1>
-              <h1  className={styles.title}  id={styles.lastname}>Andersen</h1> */}
-
-
-            <Typewriter className={styles.title} id={styles.firstname} text='Dennis'speed={100} delay={50}/>
-            <Typewriter className={styles.title} id={styles.middlename} text='Schau' speed={100} delay={100}/>
-            <Typewriter className={styles.title} id={styles.lastname} text='Andersen'speed={100} delay={150}/>
-
-     
-              <h3 className={styles.description}>Game developer, Web Developer and Dungeon Master</h3>
+            <Typewriter className={styles.title} id={styles.firstname} text='Dennis'speed={100} delay={200}/>
+            <Typewriter className={styles.title} id={styles.middlename} text='Schau' speed={100} delay={250}/>
+            <Typewriter className={styles.title} id={styles.lastname} text='Andersen'speed={100} delay={300}/>
+            <h3 className={styles.description}>Game developer, Web Developer and Dungeon Master</h3>
           </div>
     </section>
   )

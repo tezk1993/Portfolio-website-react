@@ -18,6 +18,16 @@
 }
 
 
+.content h3{
+    color: var(--color-on-primary);
+    grid-area: 6 / 2 / 7 / 6;
+    margin: auto;
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 800ms;
+}
 
 #firstname {
     height: 100%;
@@ -36,16 +46,6 @@
 
 }
 
-.content h3{
-    color: var(--color-on-primary);
-    grid-area: 6 / 2 / 7 / 6;
-    margin: auto;
-    opacity: 0;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 800ms;
-}
 
 
 @keyframes fadeInAnimation {
