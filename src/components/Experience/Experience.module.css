@@ -115,15 +115,18 @@
 
 
 .certificateContainer {
+ 
+    
     width: 75%;
+    
 }
 
-
-
-.certificateContainer li h5{
-    color: var(--color-on-primary);
-
+.certificateContainer ul{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
 }
+
 @media screen and (max-width: 830px) {
     .container{
         flex-direction: column;

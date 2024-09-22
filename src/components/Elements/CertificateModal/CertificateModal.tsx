@@ -12,13 +12,13 @@ interface Props{
 export const CertificateModal = ({certificate}) => {
 
     const [showModal, setShowModal] = useState(false);
-    const {institute,role} = certificate;
+    const {institute,role,cert_dir} = certificate;
     const mediaQueryList = window.matchMedia("(max-width: 830px)");
 
     function handleShowModal(state) {
         console.log("handle modal click");
         if(mediaQueryList.matches){
-            window.open(getImageUrl("images/skills/certificates/frontendengineer.png"),"_blank");
+            window.open(getImageUrl(cert_dir),"_blank");
         }else{
             setShowModal(state);
             if(state){
@@ -41,7 +41,7 @@ export const CertificateModal = ({certificate}) => {
                     <div className={styles.container}>
                        <img 
                             loading="lazy" 
-                            src={getImageUrl("images/skills/certificates/frontendengineer.png")} 
+                            src={getImageUrl(cert_dir)} 
                             alt={`Image of project `} 
                             className={styles.image} 
                         />
