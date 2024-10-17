@@ -44,6 +44,11 @@ export const ProjectCard = ({project,projects}) => {
           onClick={() => {
           window.scroll(0,0)
           localStorage.setItem("selectedProject", JSON.stringify(project))}}
+          
+          target="_blank" 
+          
+          rel="noopener noreferrer"
+
         >
         </Link>
 
