@@ -30,6 +30,8 @@ export const Projects = ({ newref }) => {
       return new Date(b.dateofproject) - new Date(a.dateofproject);
     });
     setDatabaseProjects(data);
+    localStorage.setItem("allProjects", JSON.stringify(data));
+
   }
 
   const id = useId();

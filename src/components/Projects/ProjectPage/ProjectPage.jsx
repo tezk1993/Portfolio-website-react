@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { getImageUrl, getLoremIpsum } from '../../../utils'
 import styles from "./ProjectPage.module.css"
-import projects from "../../../data/projects.json";
+import allProjects from "../../../data/projects.json";
 
 import { useState, useCallback, useId } from 'react';
 import {Link, useParams,useNavigate,useLocation  } from 'react-router-dom';
@@ -16,15 +16,31 @@ Number.prototype.mod = function (n) {
 export const ProjectPage = () => {
 
   const location = useLocation()
-  
-  
-  const { project,projects } = location.state
+  const [project,setProject] =useState(JSON.parse(localStorage.getItem("selectedProject")));
+  const [allProjects,setAllProjects] =useState(JSON.parse(localStorage.getItem("allProjects")));
+
   const params = useParams();
   const navigate = useNavigate();
-  const index = projects.findIndex((a) => a === project)
-  const length = projects.length;
-  const prev = projects[((index-1 % length) + length) % length];
-  const next = projects[((index+1 % length) + length) % length];
+  const index = allProjects.findIndex((a) => a === project)
+  const length = allProjects.length;
+  const prev = allProjects[((index-1 % length) + length) % length];
+  const next = allProjects[((index+1 % length) + length) % length];
+
+  // useEffect(() => {
+  //   localStorage.removeItem("selectedProject");
+  //   localStorage.removeItem("allProjects");
+
+  // }, []);
+  // useEffect(() => {
+
+  //   if (location) {
+
+  //     const { project,projects } = location.state
+
+  //     setAllProjects(projects);
+  //     setProject(project);
+  //   }
+  // }, [location]);
 
  return (
     <section  className={styles.container} id="projects">
@@ -33,10 +49,10 @@ export const ProjectPage = () => {
       <Link to="/" className={styles.link}  > <img className={styles.logo} src={getImageUrl('images/Logo_Finished_Light.webp')} alt={` Logo`}/> </Link> 
 
         <div>
-          <Link className={styles.link} key={prev.title} to={`/projects/${prev.title}`} aria-label={`Link to project ${prev.title} page` }  state={{project:prev,projects}} onClick={() => {window.scroll(0,0)}}>
+          <Link className={styles.link} key={prev.title} to={`/projects/${prev.title}`} aria-label={`Link to project ${prev.title} page` }  state={{project:prev,projects: allProjects}} onClick={() => {window.scroll(0,0)}}>
             <FontAwesomeIcon  icon={faCaretLeft}/>
           </Link>        
-          <Link className={styles.link}   key={next.title} to={`/projects/${next.title}`} aria-label={`Link to project ${next.title} page` }  state={{project:next,projects}} onClick={() => {window.scroll(0,0)}}>
+          <Link className={styles.link}   key={next.title} to={`/projects/${next.title}`} aria-label={`Link to project ${next.title} page` }  state={{project:next,projects: allProjects}} onClick={() => {window.scroll(0,0)}}>
             <FontAwesomeIcon  icon={faCaretRight}/>
           </Link>
         </div>

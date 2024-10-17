@@ -29,7 +29,22 @@ export const ProjectCard = ({project,projects}) => {
 
   return (            
     <motion.div initial="default" whileHover="hover" hover id={styles.card} key={`card-${project.id}`} className={styles.card} style={ project.title === null ? { display:'none'} : {display : 'block'} }>
-        <Link  key={project.title} to={`/projects/${project.title}`} aria-label={`Link to project ${project.title} page` }  state={{project,projects}} onClick={() => {window.scroll(0,0)}}>
+        <Link  
+          key={project.title} 
+          
+          to={`/projects/${project.title}`} 
+
+          aria-label={`Link to project ${project.title} page` }  
+
+          state={{project,projects}} 
+
+          onAuxClick={() => {
+          localStorage.setItem("selectedProject", JSON.stringify(project))}} 
+
+          onClick={() => {
+          window.scroll(0,0)
+          localStorage.setItem("selectedProject", JSON.stringify(project))}}
+        >
         </Link>
 
         <div className={styles.imgcontainer}   >
