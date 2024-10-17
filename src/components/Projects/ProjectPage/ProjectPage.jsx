@@ -16,6 +16,8 @@ Number.prototype.mod = function (n) {
 export const ProjectPage = () => {
 
   const location = useLocation()
+  
+  
   const { project,projects } = location.state
   const params = useParams();
   const navigate = useNavigate();
