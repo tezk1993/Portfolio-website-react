@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useState, useCallback, useId, useEffect } from "react";
 import { Link } from "react-router-dom";
-import supabase from "../SupabaseClient";
+import supabase from "../SupabaseClient.js";
 import { HiThere } from "../Animations/HiThere";
 import { motion } from "framer-motion";
 
@@ -31,7 +31,6 @@ export const Projects = ({ newref }) => {
     });
     setDatabaseProjects(data);
     localStorage.setItem("allProjects", JSON.stringify(data));
-
   }
 
   const id = useId();
@@ -43,11 +42,11 @@ export const Projects = ({ newref }) => {
           databaseprojects
             .filter((proj) => matchTags(proj.tags, [...selectedtags, tagId]))
             .map((x) => x.tags)
-            .flat(1),
+            .flat(1)
         ),
       ];
       tagsFiltered = tagsFiltered.filter(
-        (el) => ![...selectedtags, tagId].includes(el),
+        (el) => ![...selectedtags, tagId].includes(el)
       );
 
       setAvailableTags(tagsFiltered);
@@ -56,7 +55,7 @@ export const Projects = ({ newref }) => {
         return setSelectedTags((prevTags) => [...prevTags, tagId]);
       }
     },
-    [selectedtags, availabletags],
+    [selectedtags, availabletags]
   );
 
   const deleteTag = useCallback(
@@ -71,11 +70,11 @@ export const Projects = ({ newref }) => {
           databaseprojects
             .filter((proj) => matchTags(proj.tags, tagsFiltered))
             .map((x) => x.tags)
-            .flat(1),
+            .flat(1)
         ),
       ]);
     },
-    [selectedtags, availabletags],
+    [selectedtags, availabletags]
   );
 
   const matchTags = (current, target) => {
@@ -96,7 +95,7 @@ export const Projects = ({ newref }) => {
   }
 
   return (
-    <section className={styles.container} id='projects'>
+    <section className={styles.container} id="projects">
       <div className={styles.header}>
         <div className={styles.sidebar}></div>
         <h2 ref={newref} className={styles.title}>
@@ -108,8 +107,8 @@ export const Projects = ({ newref }) => {
       <div className={styles.content}>
         <div className={styles.contentsidebar}>
           <div className={styles.tagtab}>
-            <i id='caret' className='fas fa-caret-left' onClick={openTagbar} />
-            <div id='tagcontainer' className={styles.tagcontainer}>
+            <i id="caret" className="fas fa-caret-left" onClick={openTagbar} />
+            <div id="tagcontainer" className={styles.tagcontainer}>
               <h5> Selected tags</h5>
               <div className={styles.tags}>
                 {selectedtags.length > 0 ? (
@@ -157,7 +156,9 @@ export const Projects = ({ newref }) => {
           {databaseprojects
             .filter((proj) => matchTags(proj.tags, selectedtags))
             .map((x, id) => {
-              return <ProjectCard key={id} project={x} projects={databaseprojects}/>;
+              return (
+                <ProjectCard key={id} project={x} projects={databaseprojects} />
+              );
             })}
         </div>
       </div>
