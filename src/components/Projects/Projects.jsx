@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useState, useCallback, useId, useEffect } from "react";
 import { Link } from "react-router-dom";
-import supabase from "../SupabaseClient.js";
+import { supabase } from "../SupabaseClient.js";
 import { HiThere } from "../Animations/HiThere";
 import { motion } from "framer-motion";
 

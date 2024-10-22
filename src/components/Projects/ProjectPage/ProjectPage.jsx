@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { getImageUrl, getLoremIpsum } from "../../../utils";
 import styles from "./ProjectPage.module.css";
-import allProjects from "../../../data/projects.json";
 
 import { useState, useCallback, useId } from "react";
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
@@ -11,7 +10,8 @@ import {
   faCaretRight,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { SupabaseClient } from "@supabase/supabase-js";
+
+import { client } from "../../SupabaseClient.js";
 
 Number.prototype.mod = function (n) {
   "use strict";
@@ -20,24 +20,42 @@ Number.prototype.mod = function (n) {
 
 export const ProjectPage = () => {
   const location = useLocation();
+
   const [project, setProject] = useState(
     JSON.parse(localStorage.getItem("selectedProject"))
   );
   const [allProjects, setAllProjects] = useState(
     JSON.parse(localStorage.getItem("allProjects"))
   );
+  const [images, setImages] = useState([]);
 
   const index = allProjects.findIndex((a) => a.id === project.id);
-
+  const CDNURL =
+    "https://pxggcbphlowxbpmwnicn.supabase.co/storage/v1/object/public/Portfolio/Projects/";
   const length = allProjects.length;
   const prev = allProjects[(index - (1 % length) + length) % length];
   const next = allProjects[(index + (1 % length) + length) % length];
 
   async function getImages() {
-    const { data, error } = await supabase;
-    console.log(data);
+    const { data, error } = await client.storage
+      .from("Portfolio")
+      .list(`Projects/${project.title}`, {
+        limit: 100,
+        offset: 0,
+        sortBy: { column: "name", order: "asc" },
+      });
 
-    console.log(error);
+    console.log("Get Images");
+
+    console.log("Data:", data);
+
+    if (data !== null) {
+      setImages(data);
+      console.log(data);
+    } else {
+      alert("Error loading images");
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -172,7 +190,7 @@ export const ProjectPage = () => {
                   <p>{project.description}</p>
                 </div>
                 <div className={styles.content_gallery}>
-                  {project.gallery.map((image) => {
+                  {/* {project.gallery.map((image) => {
                     return (
                       <div className={styles.content_gallery_image}>
                         <h5>{image.imagetitle}</h5>
@@ -183,7 +201,25 @@ export const ProjectPage = () => {
                         <p>{image.imageText}</p>
                       </div>
                     );
-                  })}
+                  })} */}
+                  {images !== undefined ? (
+                    images
+                      .filter((image) => !image.name.includes("Logo"))
+                      .map((image) => {
+                        console.log(`${CDNURL}${project.title}/${image.name}`);
+                        return (
+                          <div className={styles.content_gallery_image}>
+                            <img
+                              alt={`${image.imageSrc}`}
+                              src={`${CDNURL}${project.title}/${image.name}`}
+                            />
+                            <p>{image.imageText}</p>
+                          </div>
+                        );
+                      })
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
             </div>

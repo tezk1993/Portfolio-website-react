@@ -57,7 +57,8 @@
   position:sticky;
   
   gap: var(--spacing-small);
-  height: 500px;
+  height: min-content;
+  min-height: 500px;
   width: 288px;
 
   overflow:hidden;
