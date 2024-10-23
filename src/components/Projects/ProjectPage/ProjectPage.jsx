@@ -166,6 +166,21 @@ export const ProjectPage = () => {
                     <li
                       className={styles.content_details_element}
                       style={
+                        project.tags === null
+                          ? { display: "none" }
+                          : { display: "block" }
+                      }
+                    >
+                      <h4>Tags</h4>
+                      <br></br>
+
+                      {project.tags?.map((tag) => {
+                        return <h5>{tag}</h5>;
+                      })}
+                    </li>
+                    <li
+                      className={styles.content_details_element}
+                      style={
                         project.links === null
                           ? { display: "none" }
                           : { display: "block" }
@@ -176,9 +191,14 @@ export const ProjectPage = () => {
 
                       {project.links?.map((linkinfo) => {
                         return (
-                          <a href={linkinfo.link} target="_blank">
+                          <a
+                            href={linkinfo.link}
+                            target="_blank"
+                            className={styles.siteLink}
+                          >
                             {" "}
                             <h5>{linkinfo.linktype}</h5>{" "}
+                            <FontAwesomeIcon icon={faCaretRight} />
                           </a>
                         );
                       })}
