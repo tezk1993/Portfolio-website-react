@@ -47,7 +47,7 @@ export const Hero = ({ newref }) => {
 
           <li className={styles.link}>
             <a
-              href="https://x.com/D_SchauA"
+              href="https://bsky.app/profile/dschaua.bsky.social"
               target="_blank"
               aria-label="Link to Twitter page"
             >
